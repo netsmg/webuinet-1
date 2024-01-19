@@ -1,0 +1,39 @@
+{
+	"name": "WEBUInet",
+	"short_name": "WEBUInet",
+	"start_url": "./?utm_source=web_app_manifest",
+	"description": " An authentic blog to share your unique thoughts.",
+	"lang": "en",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#B0C4DE",
+	"theme_color": "#B0C4DE",
+	"icons": [
+	
+		{
+			"src": "logo-color.png",
+			"sizes": "1500x1500",
+			"type": "image/png"
+		},
+		{
+			"src": "logo-black.png",
+			"sizes": "1500x1500",
+			"type": "image/png"
+		},
+		{
+			"src": "webuinet-high-resolution-logo.png",
+			"sizes": "1500x1500",
+			"type": "image/png"
+		},
+		{
+			"src": "logo-white.png",
+			"sizes": "1500x1500",
+			"type": "image/png"
+		},
+		{
+			"src": "logo-no-background.png",
+			"sizes": "1500x1500",
+			"type": "image/png"
+		}
+	]
+}
