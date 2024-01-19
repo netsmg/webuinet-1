@@ -18,7 +18,7 @@
   import { DarkMode } from 'flowbite-svelte';
   let me;
   onMount(async () => {
-    document.title = "PWTBLOG | Home";
+    document.title = "WEBUInet  | Home";
    const  saveSettings =() => {
       return new Promise((resolve, reject) => {
         let x = setInterval(()=>{
@@ -134,7 +134,7 @@
     <span
       class="max-sm:text-[17px] self-center whitespace-nowrap text-xl font-bold font-poppins dark:text-blue-600 text-blue-500"
     >
-      PWTBLOG
+      WEBUInet
     </span>
     <DarkMode {btnClass} />
   </NavBrand>
@@ -209,11 +209,11 @@
 
       <AppRailTile
         on:click={openSide}
-        label="Blog"
+        label="Projects"
         tag="a"
-        href={"/blogs"}
+        href={"/projects"}
         value={3}
-        class="{'/blogs' === $page.url.pathname ? '!bg-primary-500' : ''}"
+        class="{'/projects' === $page.url.pathname ? '!bg-primary-500' : ''}"
         ><Icon class="text-3xl" icon="fluent-emoji-high-contrast:popcorn" />
         </AppRailTile>
       
