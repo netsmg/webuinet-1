@@ -1,225 +1,666 @@
 <script>
-  import { onMount } from 'svelte';
-
-  let cards = [
-    { name: 'Basic', price: '$9.99', features: ['Access to standard workouts and nutrition plans', 'Email support'] },
-    { name: 'Pro', price: '$19.99', features: ['Access to advanced workouts and nutrition plans', 'Priority Email support', 'Exclusive access to live Q&A sessions'] },
-    { name: 'Ultimate', price: '$29.99', features: ['Access to all premium workouts and nutrition plans', '24/7 Priority support', '1-on-1 virtual coaching session every month', 'Exclusive content and early access to new features'] },
+  export let packages = [
+    {
+      title: 'Basic',
+      price: 199,
+      duration: '/ monthly',
+      features: [
+        '1 job posting',
+        '0 featured job',
+        'Job displayed for 20 days',
+        'Premium Support 24/7'
+      ]
+    },
+    {
+      title: 'Standard',
+      price: 499,
+      duration: '/ monthly',
+      features: [
+        '1 job posting',
+        '0 featured job',
+        'Job displayed for 20 days',
+        'Premium Support 24/7'
+      ]
+    },
+    {
+      title: 'Extended',
+      price: 799,
+      duration: '/ monthly',
+      features: [
+        '1 job posting',
+        '0 featured job',
+        'Job displayed for 20 days',
+        'Premium Support 24/7'
+      ]
+    }
   ];
-
-  let overlay = Array(cards.length).fill({});
-
-  onMount(() => {
-    const cardsContainer = document.querySelector(".cards");
-    const overlayEl = document.querySelector(".overlay");
-
-    const applyOverlayMask = (e) => {
-      const x = e.pageX - cardsContainer.offsetLeft;
-      const y = e.pageY - cardsContainer.offsetTop;
-      overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
-    };
-
-    document.body.addEventListener("pointermove", applyOverlayMask);
-  });
 </script>
 
-<main class="main flow">
-  <h1 class="main__heading">Pricing</h1>
-  <div class="main__cards cards">
-    {#each cards as { name, price, features }, index (key)}
-      <div class="cards__card card" on:mouseover={() => overlay[index].hover = true} on:mouseout={() => overlay[index].hover = false}>
-        <h2 class="card__heading">{name}</h2>
-        <p class="card__price">{price}</p>
-        <ul role="list" class="card__bullets flow">
-          {#each features as feature (feature)}
-            <li>{feature}</li>
-          {/each}
-        </ul>
-        <a href={`#${name.toLowerCase()}`} class="card__cta cta">Get Started</a>
-      </div>
-    {/each}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/*** 
 
-    {#each overlay as { hover } (index)}
-      <div class="overlay cards__inner" style={hover ? `--opacity: 1; --width: ${cards[index].width}px; --height: ${cards[index].height}px;` : ''}></div>
-    {/each}
-  </div>
-</main>
+====================================================================
+Global Settings
+====================================================================
 
-<style>@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+***/
+:root {
+  --primary-50: #f5f3ff;
+  --primary-100: #ede9fe;
+  --primary-300: #c4b5fd;
+  --primary-600: #7c3aed;
+  --primary-900: #4c1d95;
+  --secondary-50: #ecfeff;
+  --secondary-100: #d5fafc;
+  --secondary-300: #75e3ea;
+  --secondary-600: #1db5be;
+  --secondary-900: #2a4e51;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+  --white: #ffffff;
+  --black: #000000;
+  /* font style  */
+  --fs-displayXL: 60px;
+  --fs-displayLG: 48px;
+  --fs-displayMD: 36px;
+  --fs-displaySM: 30px;
+  --fs-bodyLG: 18px;
+  --fs-bodyMD: 16px;
+  --fs-bodySM: 14px;
+  --lh-displayXL: 72px;
+  --lh-displayLG: 60px;
+  --lh-displayMD: 45px;
+  --lh-displaySM: 40px;
+  --lh-bodyLG: 28px;
+  --lh-bodyMD: 24px;
+  --lh-bodySM: 20px;
+}
+@media (max-width: 992px) {
+  :root {
+    /* font style  */
+    --fs-displayXL: 48px;
+    --fs-displayLG: 36px;
+    --fs-displayMD: 30px;
+    --fs-displaySM: 24px;
+    --lh-displayXL: 60px;
+    --lh-displayLG: 45px;
+    --lh-displayMD: 40px;
+    --lh-displaySM: 32px;
+  }
+}
+@media (max-width: 576px) {
+  :root {
+    /* font style  */
+    --fs-displayXL: 36px;
+    --fs-displayLG: 30px;
+    --fs-bodyLG: 16px;
+    --fs-bodyMD: 14px;
+    --lh-displayXL: 45px;
+    --lh-displayLG: 40px;
+    --lh-bodyLG: 24px;
+    -lh-bodymd: 20px;
+  }
+}
+/*** 
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+====================================================================
+App Default Style
+====================================================================
+
+***/
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
-
-html,
-body {
-  height: 100%;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
-
-body {
-  display: grid;
-  place-items: center;
-  font-family: "League Spartan", system-ui, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  background-color: #212121;
-  color: #ddd;
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+  outline: none;
 }
+/*** 
 
-ul {
-  list-style: none;
-}
+====================================================================
+Button style's
+====================================================================
 
-.main {
-  max-width: 75rem;
-  padding: 3em 1.5em;
-}
-
-.main__heading {
-  font-weight: 600;
-  font-size: 2.25em;
-  margin-bottom: 0.75em;
+***/
+button,
+.button {
   text-align: center;
-  color: #eceff1;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 20px;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 18px 35px 15px 35px;
+  position: relative;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-theme-default {
+  color: var(--primary-100);
+  background-color: var(--primary-600);
+}
+.btn-theme-default:hover {
+  color: var(--primary-100);
+  background-color: #562ba1;
+}
+.btn-theme-1 {
+  color: var(--primary-600);
+  background-color: var(--primary-100);
+}
+.btn-theme-1:hover {
+  color: var(--primary-100);
+  background-color: var(--primary-600);
+}
+.btn-theme-2 {
+  color: var(--primary-600);
+}
+.btn-theme-2:hover {
+  color: var(--primary-100);
+  background-color: var(--primary-600);
+}
+/*** 
+
+====================================================================
+Font Colour
+====================================================================
+
+***/
+.nav-item a,
+.text-body p,
+.text-body h2,
+#Herosection h1,
+#Features .container-body .text .title,
+#Features .container-body .text .description,
+.pricing-table .price {
+  color: var(--neutral-900);
+}
+#Herosection p {
+  color: var(--neutral-700);
+}
+#Testimonial .personal-detail .per-role,
+#FAQ .accordion-item .accordion-body,
+.pricing-table .price .duration {
+  color: var(--neutral-500);
+}
+#Pricing .inner-box .table-content ul li,
+.pricing-table .tag {
+  color: var(--primary-600);
+}
+#Pricing .inner-box .title {
+  color: var(--primary-900);
+}
+/*** 
+
+====================================================================
+Background Colour
+====================================================================
+
+***/
+.bg-primary-300 {
+  background-color: var(--primary-100);
+}
+.bg-secondary-100 {
+  background-color: var(--secondary-100);
+}
+.bg-secondary-600 {
+  background-color: var(--secondary-600);
+}
+.bg-neutral-50 {
+  background-color: var(--neutral-50);
+}
+/*** 
+
+====================================================================
+Typography - fontWeight
+====================================================================
+
+***/
+button,
+.button,
+.fw-light,
+.pricing-table .duration,
+.pricing-table .duration,
+.pricing-table .table-content ul li {
+  font-weight: 400;
+}
+#Footer a,
+.pricing-table .title,
+.pricing-table .price,
+.pricing-table .table-footer a {
+  font-weight: 500;
+}
+/*** 
+
+====================================================================
+Typography - fontSize/lineHeight/letterSpacing
+====================================================================
+
+***/
+#Herosection h1,
+h1 {
+  font-size: var(--fs-displayXL);
+  line-height: var(--lh-displayXL);
+  letter-spacing: -0.025em;
+}
+.text-body h2,
+h2 {
+  font-size: var(--fs-displayLG);
+  line-height: var(--lh-displayLG);
+  letter-spacing: -0.025em;
+}
+#Metric .content-item .title {
+  font-size: var(--fs-displayMD);
+  line-height: var(--lh-displayMD);
+  letter-spacing: -0.025em;
+}
+#Features .container-body .text .title,
+#Pricing .inner-box .price {
+  font-size: var(--fs-displaySM);
+  line-height: var(--lh-displaySM);
+}
+#Testimonial .personal-detail .per-name,
+#FAQ .accordion-item h2 button,
+.text-body p,
+.badges p {
+  font-size: var(--fs-bodyLG);
+  line-height: var(--lh-bodyLG);
+  font-weight: 400;
+}
+#Metric .content-item .Description,
+#Features .container-body .text .description,
+#Pricing .inner-box .title,
+#Pricing .inner-box .price span.duration,
+#Pricing .inner-box .table-content ul li,
+#Pricing .pricing-table .table-footer a {
+  font-size: var(--fs-bodyMD);
+  line-height: var(--lh-bodyMD);
+}
+#Testimonial .personal-detail .per-role,
+#FAQ .accordion-item .accordion-body,
+.pricing-table .tag,
+.nav-item a {
+  font-size: var(--fs-bodySM);
+  line-height: var(--lh-bodySM);
 }
 
-.cards {
+/*** 
+
+====================================================================
+Theme Style
+====================================================================
+
+***/
+#Herosection,
+#Features .container,
+#Pricing .container,
+.section .container,
+#FAQ,
+.testimonial-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#Features .text-body h1,
+#Features .text-body p,
+#Pricing .text-body h1,
+#Pricing .text-body p {
+  max-width: 800px;
+}
+/*** 
+
+====================================================================
+App
+====================================================================
+
+***/
+.app {
+  min-height: fit-content;
+  overflow-x: hidden;
+}
+/*** 
+
+====================================================================
+Navbar Section
+====================================================================
+
+***/
+#Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  overflow: hidden;
+}
+.nav-scrolled {
+  box-shadow: 0px 4px 8px -2px rgba(17, 24, 39, 0.1),
+    0px 2px 4px -2px rgba(17, 24, 39, 0.06);
+}
+.nav-item a {
+  font-weight: 600;
+}
+.nav-right {
+  width: fit-content;
+}
+.BrandLogo,
+.badge-item .item {
+  height: 35px;
+}
+/*** 
+
+====================================================================
+Hero Section
+====================================================================
+
+***/
+#Herosection .text-wrapper {
+  padding-top: 40px;
+}
+.mockup-img img {
+  max-height: 560px;
+}
+@media (min-width: 786px) {
+  #Herosection .text-wrapper {
+    padding-top: 64px;
+  }
+  .mockup-img img {
+    max-height: 640px;
+  }
+}
+@media (min-width: 992px) {
+  #Herosection .text-wrapper {
+    padding-top: 80px;
+  }
+}
+.hero-bg {
+  --band-right-offset: 0px;
+  --band-left-offset: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.hero-bg .bg {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  background: rgba(242, 247, 255, 0.7);
+  backdrop-filter: blur(100px);
+}
+@media (min-width: 1200px) {
+  .hero-bg .bg {
+    width: 100%;
+  }
+}
+.hero-bg .purple-circle {
+  position: absolute;
+  width: 406px;
+  height: 406px;
+  right: -107px;
+  top: -37px;
+  z-index: -1;
+}
+.band {
+  position: absolute;
+  z-index: 1;
+}
+.hero-bg .left-bands {
+  bottom: 4%;
+  left: -152px;
+}
+.hero-bg .right-bands {
+  bottom: 33%;
+  right: -239px;
+}
+
+/*** 
+
+====================================================================
+LogoCloud Section
+====================================================================
+
+***/
+.ClientLogo img {
+  max-height: 26px;
+}
+/*** 
+
+====================================================================
+Pricing Table Section
+====================================================================
+
+***/
+.pricing-table {
+  margin-bottom: 30px;
+}
+
+.pricing-table .inner-box {
+  border: 1px solid var(--neutral-300);
+  border-radius: 8px;
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+}
+.pricing-table .inner-box {
+  padding: 40px 40px;
+}
+.pricing-table .inner-box:hover,
+.pricing-table.tagged .inner-box {
+  border: 1px solid var(--primary-600);
+  box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
+}
+.pricing-table .tag {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 5px 25px;
+}
+.pricing-table .tag:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+  content: "";
+  border-radius: 30px;
+}
+.pricing-table .title {
+  display: block;
+  margin-bottom: 10px;
+}
+.pricing-table .price {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  transition: all 300ms ease;
+}
+.pricing-table .duration {
+  position: relative;
+  font-size: 18px;
+  line-height: 1em;
+  bottom: 7px;
+  margin-left: 7px;
+}
+.pricing-table .table-content {
+  position: relative;
+  margin-bottom: 60px;
+}
+.pricing-table .table-content ul {
   position: relative;
 }
-
-.cards__inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5em;
+.pricing-table .table-content ul li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  list-style: none;
 }
-
-.card {
-  --flow-space: 0.5em;
-  --hsl: var(--hue), var(--saturation), var(--lightness);
-  flex: 1 1 14rem;
-  padding: 1.5em 2em;
-  display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  align-items: start;
-  gap: 1.25em;
-  color: #eceff1;
-  background-color: #2b2b2b;
-  border: 1px solid #eceff133;
-  border-radius: 15px;
-}
-
-.card:nth-child(1) {
-  --hue: 165;
-  --saturation: 82.26%;
-  --lightness: 51.37%;
-}
-
-.card:nth-child(2) {
-  --hue: 291.34;
-  --saturation: 95.9%;
-  --lightness: 61.76%;
-}
-
-.card:nth-child(3) {
-  --hue: 338.69;
-  --saturation: 100%;
-  --lightness: 48.04%;
-}
-
-.card__bullets {
-  line-height: 1.4;
-}
-
-.card__bullets li::before {
-  display: inline-block;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
-  transform: translatey(0.25ch);
-  margin-right: 1ch;
-}
-
-.card__heading {
-  font-size: 1.05em;
-  font-weight: 600;
-}
-
-.card__price {
-  font-size: 1.75em;
-  font-weight: 700;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space, 1.25em);
-}
-
-.cta {
-  display: block;
-  align-self: end;
-  margin: 1em 0 0.5em 0;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.overlay {
+.pricing-table .table-content ul li i {
+  font-size: 1.3rem;
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-  opacity: var(--opacity, 0);
-  -webkit-mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  transition: 400ms mask ease;
-  will-change: mask;
+  top: 0;
+  left: 0;
 }
-
-.overlay .card {
-  background-color: hsla(var(--hsl), 0.15);
-  border-color: hsla(var(--hsl), 1);
-  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+.pricing-table .table-footer {
+  position: relative;
 }
-
-.overlay .cta {
+.pricing-table .table-footer a {
+  position: relative;
   display: block;
-  grid-row: -1;
   width: 100%;
-  background-color: hsl(var(--hsl));
-  box-shadow: 0 0 0 1px hsl(var(--hsl));
+}
+.pricing-table .table-footer a {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+/*** 
+
+====================================================================
+Testimonial Section
+====================================================================
+
+***/
+#Testimonial .testimonial-item {
+  height: fit-content;
+  padding: 32px 24px;
+  box-shadow: 0px 4px 8px -2px rgba(17, 24, 39, 0.1),
+    0px 2px 4px -2px rgba(17, 24, 39, 0.06);
+}
+#Testimonial h1,
+#Testimonial p {
+  max-width: 488px;
+}
+#Testimonial .testimonial-items,
+#Testimonial .testimonial-items .item-1 {
+  margin-top: 120px;
+}
+#Testimonial .text-body {
+  top: -80px;
+  left: 0;
+  z-index: 4;
+}
+#Testimonial .text-body .quote-mark {
+  z-index: -1;
+  top: -60px;
+  left: -48px;
+}
+/*** 
+
+====================================================================
+FAQ Section
+====================================================================
+
+***/
+.accordion-button:not(.collapsed) {
+  color: var(--primary-600);
+  background-color: var(--primary-100);
+}
+.accordion-button:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 0.25rem var(--primary-300);
+}
+/*** 
+
+====================================================================
+Footer Section
+====================================================================
+
+***/
+#Footer {
+  background-color: var(--black);
+}
+#Footer a {
+  color: var(--white);
+  padding-left: 0px;
+}
+#Footer a:hover {
+  color: var(--secondary-300);
+}
+/*** 
+
+====================================================================
+ArrowToTop Section
+====================================================================
+
+***/
+.arrow-back-to {
+  font-size: 1.2rem;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  right: 40px;
+  bottom: 80px;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0px 4px 4px rgba(19, 56, 77, 0.03));
+  cursor: pointer;
+  transition: all 0.5s ease;
+  z-index: 20;
 }
 
-:not(.overlay) > .card {
-  transition: 400ms background ease;
-  will-change: background;
-}
-
-:not(.overlay) > .card:hover {
-  --lightness: 95%;
-  background: hsla(var(--hsl), 0.1);
-}
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-  }
-  
 </style>
+
+<div class="container">
+  <div class="text-body d-flex flex-column align-items-center">
+    <h2 class="text-center fw-bold">Pricing Packages</h2>
+    <p class="text-center">
+      Connect Landify with your favorite tools that you use daily and
+      keep things on track.
+    </p>
+  </div>
+
+  <div class="row mt-5">
+    {#each packages as pkg (pkg.title)}
+      <!-- Pricing Table -->
+      <div class="pricing-table position-relative col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box overflow-hidden position-relative">
+          <div class="title">{pkg.title}</div>
+          <div class="price">
+            ${pkg.price} <span class="duration">{pkg.duration}</span>
+          </div>
+          <div class="table-content">
+            <ul>
+              {#each pkg.features as feature}
+                <li>
+                  <span><i class="bi bi-check2"></i>{feature}</span>
+                </li>
+              {/each}
+            </ul>
+          </div>
+          <div class="table-footer">
+            <a href="#" class="button btn-theme-1">View Profile</a>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing Table -->
+    {/each}
+  </div>
+</div>
