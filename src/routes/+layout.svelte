@@ -1,1 +1,131 @@
-<slot />
+<script>
+  import { onMount } from 'svelte';
+
+  let headerBtn, headerNav, header, myModalEl;
+
+  onMount(() => {
+    headerBtn = document.querySelector('.header__btn');
+    headerNav = document.querySelector('.header__nav');
+    header = document.querySelector('.header');
+    myModalEl = document.getElementById('modal-wallet');
+
+    headerBtn.addEventListener('click', toggleHeader);
+    window.addEventListener('scroll', handleScroll);
+
+    myModalEl.addEventListener('show.bs.modal', handleModalShow);
+    myModalEl.addEventListener('hidden.bs.modal', handleModalHidden);
+
+    // Initialize header state based on scroll position
+    handleScroll();
+  });
+
+  function toggleHeader() {
+    headerBtn.classList.toggle('header__btn--active');
+    headerNav.classList.toggle('header__nav--active');
+
+    if (window.scrollY === 0) {
+      header.classList.toggle('header--active');
+    }
+  }
+
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      header.classList.add('header--active');
+    } else {
+      header.classList.remove('header--active');
+    }
+  }
+
+  function handleModalShow(event) {
+    if (window.innerWidth > 1200) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      header.style.paddingRight = `${scrollBarWidth}px`;
+    }
+  }
+
+  function handleModalHidden(event) {
+    if (window.innerWidth > 1200) {
+      header.style.paddingRight = '';
+    }
+  }
+</script>
+
+<svelte:head>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="/css/splide.min.css">
+	<link rel="stylesheet" href="/css/slimselect.css">
+	<link rel="stylesheet" href="/css/main.css">
+</svelte:head>
+<!-- Your HTML structure goes here -->
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="header__content">
+          <!-- btn -->
+          <button class="header__btn" type="button" aria-label="header__nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <!-- end btn -->
+
+          <!-- logo -->
+          <a href="/" class="header__logo">
+            <img src="logo.svg" alt="logo">
+          </a>
+          <!-- end logo -->
+
+          <!-- tagline -->
+          <span class="header__tagline">Play to earn <br>HTML Template</span>
+          <!-- end tagline -->
+
+          <!-- navigation -->
+          <ul class="header__nav" id="header__nav">
+            <!-- Navigation links -->
+            <li><a href="/">Home</a></li>
+            <li><a href="aggregator/">Aggregator</a></li>
+									<li><a href="ranking/">Ranking</a></li>
+									<li><a href="game/">Game details</a></li>
+									<li><a href="add/">Add new game</a></li>
+          </ul>
+          <!-- end navigation -->
+
+          <!-- wallet -->
+          <button type="button" data-bs-toggle="modal" class="header__cta" data-bs-target="#modal-wallet">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M19,7H18V6a3,3,0,0,0-3-3H5A3,3,0,0,0,2,6H2V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V10A3,3,0,0,0,19,7ZM5,5H15a1,1,0,0,1,1,1V7H5A1,1,0,0,1,5,5ZM20,15H19a1,1,0,0,1,0-2h1Zm0-4H19a3,3,0,0,0,0,6h1v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.83A3,3,0,0,0,5,9H19a1,1,0,0,1,1,1Z"/>
+            </svg>
+            <span>Connect</span>
+          </button>
+          <!-- end wallet -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<slot/>
+
+<!-- wallet modal -->
+<div class="modal modal--auto fade" id="modal-wallet" tabindex="-1" aria-labelledby="modal-wallet" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal__content">
+        <button class="modal__close" type="button" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/>
+          </svg>
+        </button>
+
+        <h4 class="modal__title">Connect Wallet</h4>
+
+        <p class="modal__text">Choose one of available wallet providers or create a new wallet.</p>
+
+        <!-- Wallet options -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end wallet modal -->
