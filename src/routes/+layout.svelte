@@ -85,6 +85,11 @@
           <ul class="header__nav" id="header__nav">
             <!-- Navigation links -->
             <li><a href="/">Home</a></li>
+ <li><a href="signin/">Sign in</a></li>
+									<li><a href="signup/">Sign up</a></li>
+									<li><a href="forgot/">Forgot password</a></li>
+									<li><a href="404/">404 Page</a></li>
+									<li><a href="privacy/">Privacy policy</a></li>
             <li><a href="aggregator/">Aggregator</a></li>
 									<li><a href="ranking/">Ranking</a></li>
 									<li><a href="game/">Game details</a></li>
@@ -124,6 +129,30 @@
         <p class="modal__text">Choose one of available wallet providers or create a new wallet.</p>
 
         <!-- Wallet options -->
+	<a href="/" class="modal__wallet">
+						<img src="img/wallet/metamask.svg" alt="">
+						<span>MetaMask</span>
+					</a>
+
+					<a href="/" class="modal__wallet">
+						<img src="img/wallet/coinbase.svg" alt="">
+						<span>Coinbase Wallet</span>
+					</a>
+
+					<a href="/" class="modal__wallet">
+						<img src="img/wallet/walletconnect.svg" alt="">
+						<span>WalletConnect</span>
+					</a>
+
+					<a href="/" class="modal__wallet">
+						<img src="img/wallet/myetherwallet.svg" alt="">
+						<span>MyEtherWallet</span>
+					</a>
+
+					<a href="/" class="modal__wallet">
+						<img src="img/wallet/fortmatic.svg" alt="">
+						<span>Fortmatic</span>
+					</a>
       </div>
     </div>
   </div>
