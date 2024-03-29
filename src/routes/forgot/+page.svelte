@@ -9,10 +9,10 @@
 	<div class="section section--content">
 		<div class="section__content">
 			<!-- form -->
-			<form action="#" class="form form--content">
+			<form class="form form--content">
 				<div class="form__logo-wrap">
 					<a href="index.html" class="form__logo">
-						<img src="img/logo.svg" alt="">
+						<img src="/logo.svg" alt="Logo">
 					</a>
 					<span class="form__tagline">Play to earn <br>HTML Template</span>
 				</div>
@@ -23,7 +23,7 @@
 
 				<div class="form__group form__group--checkbox">
 					<input id="remember" name="remember" type="checkbox">
-					<label for="remember">I agree to the <a href="privacy.html">Privacy Policy</a></label>
+					<label for="remember">I agree to the <a href="privacy">Privacy Policy</a></label>
 				</div>
 				
 				<button class="form__btn" type="button">Send</button>
