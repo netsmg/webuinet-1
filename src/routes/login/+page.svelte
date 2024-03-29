@@ -1,7 +1,7 @@
 <script>
   import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
   import {goto} from '$app/navigation';
-  import { app } from '../firebase';
+  import { app } from '../../firebase';
   
   const auth = getAuth(app);
   let email = '';
