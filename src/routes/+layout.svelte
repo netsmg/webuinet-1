@@ -85,15 +85,15 @@
           <ul class="header__nav" id="header__nav">
             <!-- Navigation links -->
             <li><a href="/">Home</a></li>
- <li><a href="signin/">Sign in</a></li>
-									<li><a href="signup/">Sign up</a></li>
-									<li><a href="forgot/">Forgot password</a></li>
-									<li><a href="404/">404 Page</a></li>
-									<li><a href="privacy/">Privacy policy</a></li>
-            <li><a href="aggregator/">Aggregator</a></li>
-									<li><a href="ranking/">Ranking</a></li>
-									<li><a href="game/">Game details</a></li>
-									<li><a href="add/">Add new game</a></li>
+ <li><a href="login">Login</a></li>
+									<li><a href="register">Register</a></li>
+									<li><a href="forgot">Forgot password</a></li>
+									<li><a href="404">404 Page</a></li>
+									<li><a href="privacy">Privacy policy</a></li>
+            <li><a href="aggregator">Aggregator</a></li>
+									<li><a href="ranking">Ranking</a></li>
+									<li><a href="game">Game details</a></li>
+									<li><a href="add">Add new game</a></li>
           </ul>
           <!-- end navigation -->
 
