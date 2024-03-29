@@ -5,7 +5,7 @@
 				<div class="col-12">
 					<!-- hero content -->
 					<div class="hero__content">
-						<span class="hero__tagline">Aurora HTML Template</span>
+						<span class="hero__tagline">WELCOME</span>
 						<h2 class="hero__title">Play to Earn Ecosystem</h2>
 						<p class="hero__text">Metaverse Aggregator & Web 3.0 Launchpad</p>
 						<div class="hero__btns">
