@@ -57,6 +57,7 @@
 	<link rel="stylesheet" href="/css/slimselect.css">
 	<link rel="stylesheet" href="/css/main.css">
 </svelte:head>
+
 <!-- Your HTML structure goes here -->
 <header class="header">
   <div class="container">
@@ -78,7 +79,7 @@
           <!-- end logo -->
 
           <!-- tagline -->
-          <span class="header__tagline">Play to earn <br>HTML Template</span>
+          <span class="header__tagline">WELCOME <br>WEBUINET</span>
           <!-- end tagline -->
 
           <!-- navigation -->
@@ -90,7 +91,7 @@
 									<li><a href="forgot">Forgot password</a></li>
 									<li><a href="404">404 Page</a></li>
 									<li><a href="privacy">Privacy policy</a></li>
-            <li><a href="aggregator">Aggregator</a></li>
+            <li><a href="explore">Explore</a></li>
 									<li><a href="ranking">Ranking</a></li>
 									<li><a href="game">Game details</a></li>
 									<li><a href="add">Add new game</a></li>
