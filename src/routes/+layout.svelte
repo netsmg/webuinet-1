@@ -79,7 +79,7 @@
           <!-- end logo -->
 
           <!-- tagline -->
-          <span class="header__tagline">WELCOME <br>WEBUINET</span>
+          <span class="header__tagline">WEBUINET</span>
           <!-- end tagline -->
 
           <!-- navigation -->
