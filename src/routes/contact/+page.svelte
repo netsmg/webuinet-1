@@ -1,7 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { getDatabase, ref, push } from "firebase/database";
-
+   import { app } from '../../firebase';
+  
+  
   let formData = {
     name: "",
     email: "",
@@ -24,7 +26,7 @@
     return;
   }
 
-  const db = getDatabase();
+  const db = getDatabase(app);
   const contactsRef = ref(db, "contacts");
 
   // Push the form data to the "contacts" collection
