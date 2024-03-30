@@ -14,5 +14,9 @@
       .catch(error => console.error('Error downloading file:', error));
   };
 </script>
+<div class="section section--content">
+		<div class="section__content">
 
-<button on:click={downloadFile}>Download File</button>
+<button class="form__btn" on:click={downloadFile}>Download File</button>
+</div>
+</div>
