@@ -146,12 +146,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- end resources -->
-
-			</div>
-		</div>
-	</section>
-	<!-- end sponsors -->
+	
 
 	<!-- faq -->
 	<section class="section">
