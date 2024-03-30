@@ -45,7 +45,7 @@
   console.log("Form submitted to Firebase Realtime Database!");
 };
 onMount(()=>{
-        document.title = "Contact";
+        document.title = "Contact | Webuinet";
     })
 </script>
 
@@ -59,7 +59,7 @@ onMount(()=>{
 				<!-- breadcrumb -->
 				<div class="col-12">
 					<ul class="breadcrumbs">
-						<li class="breadcrumbs__item"><a href="index.html">Home</a></li>
+						<li class="breadcrumbs__item"><a href="/">Home</a></li>
 						<li class="breadcrumbs__item breadcrumbs__item--active">Contacts</li>
 					</ul>
 				</div>
@@ -76,14 +76,14 @@ onMount(()=>{
 					<!-- contacts -->
 					<div class="contacts">
 						<div class="contacts__list">
-							<a href="mailto:contact@rency.com" class="contact">
+							<a href="mailto:contact@webuinet.com" class="contact">
 								<span class="contact__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,4H5A3,3,0,0,0,2,7V17a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm-.41,2-5.88,5.88a1,1,0,0,1-1.42,0L5.41,6ZM20,17a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V7.41l5.88,5.88a3,3,0,0,0,4.24,0L20,7.41Z"/></svg>
 								</span>
-								<span class="contact__text">contact@aurora.com</span>
+								<span class="contact__text">contact@webuinet.com</span>
 							</a>
 
-							<a href="tel:88007775353" class="contact">
+							<a href="tel:+880 000000" class="contact">
 								<span class="contact__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.71,16.29l-.15-.12a.76.76,0,0,0-.18-.09L12.2,16a1,1,0,0,0-.91.27,1.15,1.15,0,0,0-.21.33,1,1,0,0,0,1.3,1.31,1.46,1.46,0,0,0,.33-.22,1,1,0,0,0,.21-1.09A1,1,0,0,0,12.71,16.29ZM16,2H8A3,3,0,0,0,5,5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V5A1,1,0,0,1,8,4h8a1,1,0,0,1,1,1Z"/></svg>
 								</span>
