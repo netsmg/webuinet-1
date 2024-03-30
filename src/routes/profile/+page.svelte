@@ -33,7 +33,7 @@
 					
 						<div class="header__logo">
 						     {#if user.photoURL}
-        <img src="{user.photoURL}" alt="profile-pic" class="header__logo">
+        <img src="{user.photoURL}" alt="profile-pic" class="profile-pic">
       {/if}
 						</div>
 						<h2 class="hero__title">Welcome {user.displayName}</h2>
@@ -60,3 +60,14 @@
  {:else}
   <p>Loading...</p>
 {/if}
+<style>
+.profile-pic{
+    width: 35%;
+    background-color: white;
+    border: 3px solid #FFE400;
+    border-radius: 50%;
+    padding: 3px;
+    position: absolute;
+    top: 40px;
+}
+</style>
