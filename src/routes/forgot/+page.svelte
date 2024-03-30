@@ -6,7 +6,7 @@
   const emailInput = document.getElementById('emailInput');
   const successMessage = document.getElementById('successMessage');
 
-  async function sendPasswordResetEmail() {
+  async function sendResetEmail() {
     const email = emailInput.value.trim();
     if (!email) {
       console.error('Email is required.');
@@ -26,7 +26,7 @@
   }
 
   const sendButton = document.querySelector('.form__btn');
-  sendButton.addEventListener('click', sendPasswordResetEmail);
+  sendButton.addEventListener('click', sendResetEmail);
 </script>
 
 
