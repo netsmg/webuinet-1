@@ -15,7 +15,7 @@
 
     try {
       // Send password reset email
-      await sendPasswordResetEmail(auth, email);
+      await sendResetEmail(auth, email);
       console.log('Password reset email sent successfully.');
       // Display success message
       successMessage.style.display = 'block';
@@ -25,8 +25,7 @@
     }
   }
 
-  const sendButton = document.querySelector('.form__btn');
-  sendButton.addEventListener('click', sendResetEmail);
+  
 </script>
 
 
@@ -37,7 +36,7 @@
 			<!-- form -->
 			<form class="form form--content">
 				<div class="form__logo-wrap">
-					<a href="index.html" class="form__logo">
+					<a href="/" class="form__logo">
 						<img src="/logo.svg" alt="Logo">
 					</a>
 					<span class="form__tagline">Reset your password</span>
@@ -53,7 +52,7 @@
 					<label for="remember">I agree to the <a href="privacy">Privacy Policy</a></label>
 				</div>
 				
-				<button class="form__btn" type="button">Send</button>
+				<button class="form__btn" on:click={sendResetEmail} type="submit">Send</button>
 
 				<span class="form__text form__text--center">We will send a password reset Email</span>
 			</form>
