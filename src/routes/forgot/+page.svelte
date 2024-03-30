@@ -1,10 +1,36 @@
-<svelte:head>
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/blueimp-gallery.min.css">
-	<link rel="stylesheet" href="/css/splide.min.css">
-	<link rel="stylesheet" href="/css/slimselect.css">
-	<link rel="stylesheet" href="/css/main.css">
-</svelte:head>
+<script>
+  import { getAuth, sendPasswordResetEmail } from 'firebase/auth'; 
+  import { app } from '../../firebase';
+  
+  const auth = getAuth(app);
+  const emailInput = document.getElementById('emailInput');
+  const successMessage = document.getElementById('successMessage');
+
+  async function sendPasswordResetEmail() {
+    const email = emailInput.value.trim();
+    if (!email) {
+      console.error('Email is required.');
+      return;
+    }
+
+    try {
+      // Send password reset email
+      await sendPasswordResetEmail(auth, email);
+      console.log('Password reset email sent successfully.');
+      // Display success message
+      successMessage.style.display = 'block';
+    } catch (error) {
+      console.error('Error sending password reset email:', error);
+      // Display error message to the user
+    }
+  }
+
+  const sendButton = document.querySelector('.form__btn');
+  sendButton.addEventListener('click', sendPasswordResetEmail);
+</script>
+
+
+
 <!-- page wrap -->
 	<div class="section section--content">
 		<div class="section__content">
@@ -14,12 +40,13 @@
 					<a href="index.html" class="form__logo">
 						<img src="/logo.svg" alt="Logo">
 					</a>
-					<span class="form__tagline">Play to earn <br>HTML Template</span>
+					<span class="form__tagline">Reset your password</span>
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" placeholder="Email">
-				</div>
+    <input type="text" class="form__input" id="emailInput" placeholder="Email">
+</div>
+<div id="successMessage" class="form__text form__text--success form__text--center" style="display: none;">Password reset email sent successfully.</div>
 
 				<div class="form__group form__group--checkbox">
 					<input id="remember" name="remember" type="checkbox">
@@ -28,7 +55,7 @@
 				
 				<button class="form__btn" type="button">Send</button>
 
-				<span class="form__text form__text--center">We will send a password to your Email</span>
+				<span class="form__text form__text--center">We will send a password reset Email</span>
 			</form>
 			<!-- end form -->
 		</div>
