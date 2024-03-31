@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import { getFirestore, doc, getDoc } from 'firebase/firestore';
   import { page } from "$app/stores";
-  import { app } from '../../firebase';
+  import { app } from '../../../firebase';
 
   let post = {};
 
