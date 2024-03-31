@@ -15,7 +15,6 @@
   });
 </script>
 <section class="section section--first">
-		<!-- section head -->
 		
 			<div class="container">
 				<div class="row">
@@ -40,4 +39,4 @@
 {/each}
 </div>
 </div>
-</div>
+</section>
