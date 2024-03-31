@@ -14,7 +14,10 @@
     console.error('Error getting blogs: ', error);
   });
 </script>
-
+<div class="section section--content">
+		<div class="section__content">
+			<!-- form -->
+			<div class="form form--content">
 {#each blogs as blog (blog.id)}
   <div class="col-12 col-md-6 col-xl-4">
     <div class="post">
@@ -34,3 +37,6 @@
     </div>
   </div>
 {/each}
+</div>
+</div>
+</div>
