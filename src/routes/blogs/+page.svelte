@@ -1,6 +1,5 @@
 <script>
-  import { collection, onSnapshot } from 'firebase/firestore';
-  import { getFirestore } from 'firebase/firestore'; 
+  import { collection, getFirestore, onSnapshot } from 'firebase/firestore';
   import { app } from '../../firebase';
   
   let blogs = [];
@@ -21,7 +20,7 @@
 {#each blogs as blog (blog.id)}
   <div class="col-12 col-md-6 col-xl-4">
     <div class="post">
-      <a href="{blog.id}" class="post__img">
+      <a href="posts/{blog.id}" class="post__img">
         <img src="{blog.image}" alt="blog image">
       </a>
 
