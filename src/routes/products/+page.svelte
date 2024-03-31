@@ -1,9 +1,10 @@
 
 <script>
   import { collection, onSnapshot } from 'firebase/firestore';
-  import { getFirestore } from 'firebase/firestore';  
+  import { getFirestore } from 'firebase/firestore'; 
+  import { app } from '../../firebase';
   let products = [];
-  const db = getFirestore();  // Use getFirestore to get Firestore instance
+  const db = getFirestore(app);  // Use getFirestore to get Firestore instance
 
   const query = collection(db, 'products');
 
