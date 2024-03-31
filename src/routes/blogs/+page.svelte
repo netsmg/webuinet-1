@@ -14,10 +14,11 @@
     console.error('Error getting blogs: ', error);
   });
 </script>
-<div class="section section--content">
-		<div class="section__content">
-			<!-- form -->
-			<div class="form form--content">
+<section class="section section--first">
+		<!-- section head -->
+		
+			<div class="container">
+				<div class="row">
 {#each blogs as blog (blog.id)}
   <div class="col-12 col-md-6 col-xl-4">
     <div class="post">
