@@ -1,7 +1,7 @@
 <!-- PostDetails.svelte -->
 <script>
   import { onMount } from 'svelte';
-  import { doc, getDo, getFirestore } from 'firebase/firestore';
+  import { doc, getDoc, getFirestore } from 'firebase/firestore';
    
   import { app } from '../../firebase';
 
