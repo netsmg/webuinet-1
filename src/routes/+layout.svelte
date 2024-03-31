@@ -74,7 +74,7 @@
 
           <!-- logo -->
           <a href="/" class="header__logo">
-            <img src="logo.svg"/>
+            <img src="logo.svg" alt="WEBUInet/>
           </a>
           <!-- end logo -->
 
