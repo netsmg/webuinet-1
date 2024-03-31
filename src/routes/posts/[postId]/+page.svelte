@@ -7,6 +7,7 @@
   let post = {};
 
   onMount(async () => {
+    document.title = "Loading...";
     const postId = $page.params.postId;
     const db = getFirestore(app);
     const postRef = doc(db, 'blogs', postId);
@@ -20,27 +21,26 @@
   });
   
   function shareOnFacebook() {
-        var url = window.location.href;
-        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-    }
+    var url = window.location.href;
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
+  }
 
-    function shareOnTwitter() {
-        var url = window.location.href;
-        window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url), '_blank');
-    }
+  function shareOnTwitter() {
+    var url = window.location.href;
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url), '_blank');
+  }
 
-    function copyLink() {
-        var url = window.location.href;
-        var dummy = document.createElement("input");
-        document.body.appendChild(dummy);
-        dummy.value = url;
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        alert("Link copied to clipboard: " + url);
-    }
+  function copyLink() {
+    var url = window.location.href;
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.value = url;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Link copied to clipboard: " + url);
+  }
 </script>
-
 
 <div class="section section--pb0 section--first">
   <div class="section__article-head">
