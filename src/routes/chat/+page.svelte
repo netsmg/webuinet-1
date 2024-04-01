@@ -1,11 +1,11 @@
 <script>
   import { onMount } from 'svelte';
-  import { collection, onSnapshot } from 'firebase/firestore';
-  import { getFirestore } from 'firebase/firestore';
+  import { collection, getFirestore, onSnapshot } from 'firebase/firestore';
+  import { app } from '../../firebase';
 
   let newMessage = '';
   let messages = [];
-  const db = getFirestore();
+  const db = getFirestore(app);
 
   const query = collection(db, 'messages');
 
