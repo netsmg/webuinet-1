@@ -193,15 +193,15 @@ Font Colour
 #Features .container-body .text .title,
 #Features .container-body .text .description,
 .pricing-table .price {
-  color: var(--neutral-900);
+  color: var(--primary-600);
 }
 #Herosection p {
-  color: var(--neutral-700);
+  color: var(--primary-600);
 }
 #Testimonial .personal-detail .per-role,
 #FAQ .accordion-item .accordion-body,
 .pricing-table .price .duration {
-  color: var(--neutral-500);
+  color: var(--primary-600);
 }
 #Pricing .inner-box .table-content ul li,
 .pricing-table .tag {
@@ -656,7 +656,7 @@ ArrowToTop Section
             </ul>
           </div>
           <div class="table-footer">
-            <a href="#" class="button btn-theme-1">View Profile</a>
+            <a href="/" class="button btn-theme-1">View Profile</a>
           </div>
         </div>
       </div>
