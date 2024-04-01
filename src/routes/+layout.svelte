@@ -78,9 +78,7 @@
           </a>
           <!-- end logo -->
 
-          <!-- tagline -->
-          <span class="header__tagline"> Welcome <br> Webuinet</span>
-          <!-- end tagline -->
+          
 
           <!-- navigation -->
           <ul class="header__nav" id="header__nav">
