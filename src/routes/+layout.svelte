@@ -74,11 +74,13 @@
 
           <!-- logo -->
           <a href="/" class="header__logo">
-            <img src="logo.svg" alt="WEBUInet/>
+            <img src="logo.svg"/>
           </a>
           <!-- end logo -->
 
-          
+          <!-- tagline -->
+          <span class="header__tagline">WEBUINET</span>
+          <!-- end tagline -->
 
           <!-- navigation -->
           <ul class="header__nav" id="header__nav">
