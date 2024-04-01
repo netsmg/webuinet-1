@@ -7,7 +7,7 @@
   let post = {};
 
   onMount(async () => {
-    document.title = "Loading...";
+    document.title ="loading..";
     const postId = $page.params.postId;
     const db = getFirestore(app);
     const postRef = doc(db, 'blogs', postId);
@@ -15,6 +15,7 @@
     
     if (postSnapshot.exists()) {
       post = postSnapshot.data();
+     document.title = post.title;
     } else {
       console.error('Post not found');
     }
