@@ -1,10 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { getDatabase, ref, push } from "firebase/database";
-  import { app } from '../../firebase';
-  import { Toast } from 'flowbite-svelte';
+   import { app } from '../../firebase';
   
-
+  
   let formData = {
     name: "",
     email: "",
@@ -14,56 +13,45 @@
   };
 
   const handleSubmit = async () => {
-    // Check if any field is empty
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.subject ||
-      !formData.message
-    ) {
-      // Show error alert if any field is empty
-      alert("Please fill in all fields");
-      return;
-    }
+  // Check if any field is empty
+  if (
+    !formData.name ||
+    !formData.email ||
+    !formData.phone ||
+    !formData.subject ||
+    !formData.message
+  ) {
+    // Show error alert if any field is empty
+    alert("Please fill in all fields");
+    return;
+  }
 
-    const db = getDatabase(app);
-    const contactsRef = ref(db, "contacts");
+  const db = getDatabase(app);
+  const contactsRef = ref(db, "contacts");
 
-    try {
-      // Push the form data to the "contacts" collection
-      await push(contactsRef, formData);
+  // Push the form data to the "contacts" collection
+  await push(contactsRef, formData);
 
-      // Clear the form after submission
-      formData = {
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      };
-
-      // Show success Toast notification
-      toast.success("Message sent successfully.");
-
-      console.log("Form submitted to Firebase Realtime Database!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      // Handle error here, if necessary
-    }
+  // Clear the form after submission
+  formData = {
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   };
 
-  const toast = new Toast();
-  
-  onMount(()=>{
-    document.title = "Contact | Webuinet";
-  })
+  // Alert after submission
+  alert("Form submit successful!");
+
+  console.log("Form submitted to Firebase Realtime Database!");
+};
+onMount(()=>{
+        document.title = "Contact | Webuinet";
+    })
 </script>
 
-<!-- Use the Toast component to display success message -->
-<Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
-  <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
-</Toast>
+
 
 
 <!-- contact -->
