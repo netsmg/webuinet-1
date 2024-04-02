@@ -19,6 +19,8 @@
 </svelte:head>
 
 <div>
+<div class="section section--content">
+  <div class="section__content">
 {#each posts as post (post.id)}
 <div class="tweet-wrap">
   <div class="tweet-header">
@@ -60,6 +62,8 @@
   </div>
 </div>
 {/each}
+</div>
+</div>
 </div>
 
 <style>
