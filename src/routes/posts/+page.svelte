@@ -17,8 +17,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
     body {
-  background: #e6ecf0;
-  font-family: 'Asap', sans-serif;
+   font-family: 'Asap', sans-serif;
   font-family: 'Roboto', sans-serif;
 
 }
