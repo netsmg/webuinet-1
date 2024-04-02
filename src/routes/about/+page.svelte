@@ -15,9 +15,11 @@
 					<div class="section__title section__title--left section__title--page">
 						<h1>WELCOME</h1>
 
-						<p>This HTML template is designed for creating a dynamic and engaging <a href="index.html">play-to-earn</a> gaming website. With its sleek and modern design, the template features a user-friendly interface that allows gamers to easily access and navigate through the different sections of the site.</p>
+						<p> Are you tired of scrolling through the same old content on social media? Are you looking for a platform where you can truly connect with authentic and unique voices from around the globe? Look no further than WEBUInet – the ultimate blogging platform launching in June 2024!WEBUInet is more than just a blog – it&rsquo;s a space where civilians can share their thoughts, experiences, and insights in a meaningful and impactful way.</p>
 
-						<p>Overall, this <b>play-to-earn</b> HTML template provides a great foundation for creating a successful gaming website that engages players and promotes community building.</p>
+
+<p> Whether you&rsquo;re passionate about travel, fashion, food, or just about any topic under the sun, WEBUInet is the perfect place to express yourself and connect with like-minded individuals.Join us as we count down the days to the launch of WEBUInet and get ready to become a part of a community that celebrates individuality, creativity, and authenticity. Stay tuned for updates, sneak peeks, and more as we gear up for our exciting launch in June 2024. Get ready to be inspired, entertained, and connected like never before. WEBUInet – where your voice truly matters.</p>
+						  
 					</div>
 				</div>
 				<!-- end section title -->
