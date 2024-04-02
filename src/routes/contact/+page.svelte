@@ -44,7 +44,7 @@
       };
 
       // Show success Toast notification
-      $toast.success("Message sent successfully.");
+      toast.success("Message sent successfully.");
 
       console.log("Form submitted to Firebase Realtime Database!");
     } catch (error) {
