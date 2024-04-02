@@ -107,8 +107,7 @@ img {
 </svelte:head>
 
 <div>
-<div class="section section--content">
-  <div class="section__content">
+
 {#each posts as post (post.id)}
 <div class="tweet-wrap">
   <div class="tweet-header">
@@ -151,7 +150,3 @@ img {
 </div>
 {/each}
 </div>
-</div>
-</div>
-
-
