@@ -121,7 +121,7 @@ img {
     
   </div>
   <div class="tweet-img-wrap">
-    <img src="{post.img}" alt="" class="wtweet-img">
+    <img src="{post.img}" alt="" class="tweet-img">
   </div>
   <div class="tweet-info-counts">
     
