@@ -53,7 +53,7 @@
     }
   };
 
-  const $toast = new Toast();
+  const toast = new Toast();
   
   onMount(()=>{
     document.title = "Contact | Webuinet";
