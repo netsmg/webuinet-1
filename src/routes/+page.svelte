@@ -5,12 +5,12 @@
 				<div class="col-12">
 					<!-- hero content -->
 					<div class="hero__content">
-						<span class="hero__tagline">WELCOME</span>
-						<h2 class="hero__title">Let&apos;s build together</h2>
-						<p class="hero__text">Metaverse Aggregator & Web 3.0 Launchpad</p>
+						<span class="hero__tagline">WEBUInet</span>
+						<h2 class="hero__title">Let&apos;s Work Together</h2>
+						<p class="hero__text">Welcome to WEBUInet, the authentic blog where we share unique thoughts from around the globe. Dive into our engaging content and discover new perspectives on a variety of topics.</p>
 						<div class="hero__btns">
 							<a href="explore" class="hero__btn"><span>Explore</span></a>
-							<a href="add" class="hero__btn hero__btn--nephrite"><span>Apply</span></a>
+							<a href="register" class="hero__btn hero__btn--nephrite"><span>Join</span></a>
 						</div>
 
 						<!-- bg animation -->
@@ -30,22 +30,22 @@
 			<div class="row">
 				<div class="col-12 col-lg-4">
 					<div class="features features--first">
-						<h3 class="features__title">Metaverse Aggregator</h3>
-						<p class="features__text">Is a platform that brings together various metaverse worlds, providing access to different content and opportunities.</p>
+						<h3 class="features__title">Join Our Community </h3>
+						<p class="features__text">Join our community by signing up for a trial today and start exploring the world through our eyes. Don&rsquo;t miss out on this opportunity to connect with like-minded individuals and expand your horizons. Join WEBUInet now!</p>
 					</div>
 				</div>
 
 				<div class="col-12 col-lg-4">
 					<div class="features features--yellow">
-						<h3 class="features__title">Web 3.0 Launchpad</h3>
-						<p class="features__text">Incubator for projects aimed at developing decentralized applications, blockchain technologies, and ecosystems.</p>
+						<h3 class="features__title">A Brave New world</h3>
+						<p class="features__text">Are you tired of scrolling through the same old content on social media? Are you looking for a platform where you can truly connect with authentic and unique voices from around the globe? Look no further than WEBUInet – the ultimate blogging platform launching in June 2024!WEBUInet is more than just a blog – it&rsquo;s a space where civilians can share their thoughts, experiences, and insights in a meaningful and impactful way.</p>
 					</div>
 				</div>
 
 				<div class="col-12 col-lg-4">
 					<div class="features features--nephrite">
-						<h3 class="features__title">Stakers Governance</h3>
-						<p class="features__text">Is the process of managing a cryptocurrency protocol that allows token holders to make decisions about the protocol's future.</p>
+						<h3 class="features__title">Show Your Latent Talent</h3>
+						<p class="features__text">Whether you&rsquo;re passionate about travel, fashion, food, or just about any topic under the sun, WEBUInet is the perfect place to express yourself and connect with like-minded individuals.Join us as we count down the days to the launch of WEBUInet and get ready to become a part of a community that celebrates individuality, creativity, and authenticity. Stay tuned for updates, sneak peeks, and more as we gear up for our exciting launch in June 2024. Get ready to be inspired, entertained, and connected like never before. WEBUInet – where your voice truly matters.</p>
 					</div>
 				</div>
 			</div>
@@ -60,33 +60,25 @@
 				<!-- section title -->
 				<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 align-self-center">
 					<div class="section__title section__title--grid-right">
-						<strong>Token & economics</strong>
-						<h2>Tokenomics</h2>
-						<p>Tokenomics is the economic mechanism of a cryptocurrency or token that defines the rules for the use and distribution of tokens, and regulates the supply and demand in the market.</p>
-						<p>Typically used to achieve project goals such as ensuring token price stability, financing project development, incentivizing user participation, and more.</p>
-					</div>
+						<strong>Our Great Feature</strong>
+						<h2>Middle To End encrypted </h2>
+<p> &lsquo;Middle to End encryption &rsquo; is a term describe a system where data is encrypted not just between the sender and the recipient (End-to-End encryption), but also while it's being transmitted through intermediate servers or systems (Middle). This ensures that even if the data is intercepted at any point, it remains encrypted and inaccessible to unauthorized parties.</p>
+						 
 
 					<ul class="section__tokenomics section__tokenomics--right">
-						<li class="clr1">Liquidity – 10%</li>
-						<li class="clr2">Public Sale – 6%</li>
-						<li class="clr3">Strategic – 9%</li>
-						<li class="clr4">Private – 12%</li>
-						<li class="clr5">Seed – 9%</li>
-						<li class="clr6">Team – 10%</li>
-						<li class="clr7">Strategic Reserve – 19%</li>
-						<li class="clr8">Advisors – 5%</li>
-						<li class="clr9">Community – 20%</li>
+						<li class="clr1">Secure Transmission</li>
+						<li class="clr2">Protection from Intermediaries</li>
+						<li class="clr3">End-to-End Authenticati</li>
+						<li class="clr4">User Privacy </li>
+						<li class="clr5">Resistance to Man-in-the-Middle Attack</li>
+						<li class="clr6">Confidentiality</li>
+						<li class="clr7">Data Integrity</li>
+						
 					</ul>
 				</div>
 				<!-- end section title -->
 
-				<!-- chart -->
-				<div class="col-12 col-lg-6 align-self-center">
-					<div class="section__chart">
-						<canvas id="myChart"></canvas>
-					</div>
-				</div>
-				<!-- end chart -->
+				
 			</div>
 		</div>
 	</section>
