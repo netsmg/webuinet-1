@@ -1,60 +1,294 @@
-<svelte:head>
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/blueimp-gallery.min.css">
-	<link rel="stylesheet" href="/css/splide.min.css">
-	<link rel="stylesheet" href="/css/slimselect.css">
-	<link rel="stylesheet" href="/css/main.css">
-</svelte:head>
-<!-- article -->
-	<div class="section section--article">
+
+
+<!-- hero -->
+	<section class="hero" id="hero">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="article">
-						<!-- article content -->
-						<div class="article__content">
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &rsquo;Content here, content here&rsquo;, making it look like readable English.</p>
-							<p>Many desktop publishing packages and <a href="/">web page</a> editors now use Lorem Ipsum as their default model text, and a search for &rsquo;lorem ipsum&rsquo; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							<p>All the Lorem Ipsum generators on the <b>Internet</b> tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-							<ol>
-								<li>
-									<h4>Determination of personal information of users</h4>
-									<ol>
-										<li>If you are going to use a passage of Lorem Ipsum:
-											<ol>
-												<li>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</li>
-												<li>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</li>
-											</ol>
-										</li>
-										<li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&rsquo;t look even slightly believable.</li>
-										<li>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &rsquo;lorem ipsum&rsquo; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</li>
-									</ol>
-								</li>
-
-								<li>
-									<h4>Reasons for collecting and processing user personal information</h4>
-									<ol>
-										<li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
-										<li>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet:
-											<ol>
-												<li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged;</li>
-												<li>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages;</li>
-												<li>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like);</li>
-												<li>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text;</li>
-											</ol>
-										</li>
-									</ol>
-								</li>
-							</ol>
-							<p>All the Lorem Ipsum generators on the <b>Internet</b> tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+					<!-- hero content -->
+					<div class="hero__content">
+						<span class="hero__tagline">WEBUInet</span>
+						<h2 class="hero__title">Let&apos;s Work Together</h2>
+						<p class="hero__text">Welcome to WEBUInet, the authentic blog where we share unique thoughts from around the globe. Dive into our engaging content and discover new perspectives on a variety of topics.</p>
+						<div class="hero__btns">
+							<a href="explore" class="hero__btn"><span>Explore</span></a>
+							<a href="register" class="hero__btn hero__btn--nephrite"><span>Join</span></a>
 						</div>
-						<!-- end article content -->
+
+						<!-- bg animation -->
+						<div id="canvas" class="hero__canvas"></div>
+						<!-- end bg animation -->
+					</div>
+					<!-- end hero content -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end hero -->
+
+	<!-- features -->
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-4">
+					<div class="features features--first">
+						<h3 class="features__title">Join Our Community </h3>
+						<p class="features__text">Join our community by signing up for a trial today and start exploring the world through our eyes. Don&rsquo;t miss out on this opportunity to connect with like-minded individuals and expand your horizons. Join WEBUInet now!</p>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-4">
+					<div class="features features--yellow">
+						<h3 class="features__title">A Brave New world</h3>
+						<p class="features__text">Are you tired of scrolling through the same old content on social media? Are you looking for a platform where you can truly connect with authentic and unique voices from around the globe? Look no further than WEBUInet – the ultimate blogging platform launching in June 2024!WEBUInet is more than just a blog – it&rsquo;s a space where civilians can share their thoughts, experiences, and insights in a meaningful and impactful way.</p>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-4">
+					<div class="features features--nephrite">
+						<h3 class="features__title">Show Your Latent Talent</h3>
+						<p class="features__text">Whether you&rsquo;re passionate about travel, fashion, food, or just about any topic under the sun, WEBUInet is the perfect place to express yourself and connect with like-minded individuals.Join us as we count down the days to the launch of WEBUInet and get ready to become a part of a community that celebrates individuality, creativity, and authenticity. Stay tuned for updates, sneak peeks, and more as we gear up for our exciting launch in June 2024. Get ready to be inspired, entertained, and connected like never before. WEBUInet – where your voice truly matters.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- end article -->
+	</section>
+	<!-- end features -->
+
+	<!-- tokenomics -->
+	<section class="section section--bt">
+		<div class="container">
+			<div class="row">
+				<!-- section title -->
+				<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 align-self-center">
+					<div class="section__title section__title--grid-right">
+						<strong>One of our excellent qualities</strong>
+						<h2>Middle To End encrypted </h2>
+<p> &lsquo;Middle to End encryption &rsquo; is a term describe a system where data is encrypted not just between the sender and the recipient (End-to-End encryption), but also while it's being transmitted through intermediate servers or systems (Middle). This ensures that even if the data is intercepted at any point, it remains encrypted and inaccessible to unauthorized parties.</p>
+						 
+
+					<ul class="section__tokenomics section__tokenomics--right">
+						<li class="clr1">Secure Transmission</li>
+						<li class="clr2">Protection from Intermediaries</li>
+						<li class="clr3">End-to-End Authentication</li>
+						<li class="clr4">User Privacy </li>
+						<li class="clr5">Resistance to Man-in-the-Middle Attack</li>
+						<li class="clr6">Confidentiality</li>
+						<li class="clr7">Data Integrity</li>
+						
+					</ul>
+				</div>
+				<!-- end section title -->
+
+				
+			</div>
+		</div>
+	</section>
+	<!-- end tokenomics -->
+
+	
+
+	<!-- resources -->
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<!-- section title -->
+				<div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+					<div class="section__title">
+						<h2>What We Are? </h2>
+						<p>
+WEBUInet is a software company operating in the technology industry, with a focus on promoting peace and collaboration around the globe. Our mission is to utilize cutting-edge technology to bring people together and facilitate communication and understanding.
+
+</p>
+					</div>
+				</div>
+				<!-- end section title -->
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="resources">
+						<span class="resources__icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"/></svg>
+						</span>
+						<h3 class="resources__title">Our offer</h3>
+						<p class="resources__text">We offer a range of services and products that enable organizations and individuals to connect and collaborate on a global scale.</p>
+						<a href="/register" class="resources__link">Get started</a>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="resources resources--green">
+						<span class="resources__icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19l-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Z"/></svg>
+						</span>
+						<h3 class="resources__title">Innovation </h3>
+						<p class="resources__text">
+Whether it&rsquo;s through our innovative messaging platforms, virtual meeting tools, or interactive websites, we provide the tools necessary to foster peace and harmony in an increasingly interconnected world.
+</p>
+						<a href="/register" class="resources__link">Get started</a>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-4">
+					<div class="resources resources--light">
+						<span class="resources__icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,20H8a3,3,0,0,1-3-3V7A1,1,0,0,0,3,7V17a5,5,0,0,0,5,5h8a1,1,0,0,0,0-2Zm-6-7a1,1,0,0,0,1,1h5a1,1,0,0,0,0-2H11A1,1,0,0,0,10,13ZM21,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,14.05,2H10A3,3,0,0,0,7,5V15a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V9S21,9,21,8.94ZM15,5.41,17.59,8H16a1,1,0,0,1-1-1ZM19,15a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V5a1,1,0,0,1,1-1h3V7a3,3,0,0,0,.18,1H11a1,1,0,0,0,0,2h8Z"/></svg>
+						</span>
+						<h3 class="resources__title">Special feature</h3>
+						<p class="resources__text">
+At WEBUInet, our Special feature is our commitment to promoting peace and unity through technology. We believe that by empowering people to communicate effectively and work together, we can create a more peaceful and prosperous world for all. Join us in our mission to spread peace and understanding across the globe.
+</p>
+						<a href="/register" class="resources__link">Get started</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<!-- faq -->
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<!-- section title -->
+				<div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+					<div class="section__title">
+						<h2><a href="faq/">Frequently Asked Questions</a></h2>
+						<p>Here you will find answers to frequently asked questions about our company and services. Still no luck? <a href="contacts/">Ask a question</a>.</p>
+					</div>
+				</div>
+				<!-- end section title -->
+
+				<!-- accordion -->
+				<div class="col-12">
+					<div class="accordion" id="accordion">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+										How we can post?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse1" class="collapse" data-bs-parent="#accordion">
+										<p>It is a long established fact that a reader will be distracted by the readable content of a page <b>when looking at its layout</b>. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+										How secure is this ?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse2" class="collapse" data-bs-parent="#accordion">
+										<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+										What are long-tail and short-tail assets?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse3" class="collapse" data-bs-parent="#accordion">
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+										When the pool is added after 3 days?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse4" class="collapse" data-bs-parent="#accordion">
+										<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12 col-lg-6">
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+										What are the biggest risks to your growth?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse5" class="collapse" data-bs-parent="#accordion">
+										<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+										What is your contract address?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse6" class="collapse" data-bs-parent="#accordion">
+										<p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+										What is Aurora?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse7" class="collapse" data-bs-parent="#accordion">
+										<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+									</div>
+								</div>
+
+								<div class="accordion__card">
+									<button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+										Where we can buy and sell NFts?
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"/></svg>
+										</span>
+									</button>
+
+									<div id="collapse8" class="collapse" data-bs-parent="#accordion">
+										<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end accordion -->
+			</div>
+		</div>
+	</section>
+	<!-- end faq -->
 
 	<!-- footer -->
 	<footer class="footer">
@@ -64,19 +298,19 @@
 					<div class="footer__logo">
 						<img src="img/logo.svg" alt="">
 					</div> 
-					<p class="footer__tagline">Play to Earn GameFi Aggregator. <br>Experience an innovative gaming ecosystem <br>where you can both play and earn.</p>
+					<p class="footer__tagline">WEBUInet, the authentic blog. <br>Experience an innovative blogging ecosystem <br> Dive into our engaging content and discover new perspectives on a variety of topics.</p>
 
 					<div class="footer__lang">
 						<a class="footer__lang-btn" href="/" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img src="img/flags/uk.svg" alt="">
+							<img src="img/uk.svg" alt="">
 							<span>English</span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg>
 						</a>
 
 						<ul class="dropdown-menu footer__lang-dropdown">
-							<li><a href="/"><img src="img/flags/spain.svg" alt=""><span>Spanish</span></a></li>
-							<li><a href="/"><img src="img/flags/france.svg" alt=""><span>French</span></a></li>
-							<li><a href="/"><img src="img/flags/china.svg" alt=""><span>Chinese</span></a></li>
+							<li><a href="/"><img src="img/bangladesh.svg" alt=""><span>Bengali</span></a></li>
+							<li><a href="/"><img src="img/france.svg" alt=""><span>French</span></a></li>
+							<li><a href="/"><img src="img/china.svg" alt=""><span>Chinese</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -84,10 +318,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2 order-1 order-md-2 order-lg-2 order-xl-3 offset-md-2 offset-lg-0">
 					<h6 class="footer__title">Company</h6>
 					<div class="footer__nav">
-						<a href="about/">Our team</a>
-						<a href="about/">Tokenomics</a>
-						<a href="about/">Resources</a>
-						<a href="about/">Partners</a>
+						<a href="about">Our team</a>
+						<a href="about">End to End Encrypted </a>
+						<a href="about">Resources</a>
+						<a href="about">Partners</a>
 					</div>
 				</div>
 
@@ -99,19 +333,25 @@
 
 						<div class="col-6">
 							<div class="footer__nav">
-								<a href="aggregator/">Aggregator</a>
-								<a href="ranking/">Ranking</a>
-								<a href="add/">Add new game</a>
+								<a href="about">End to End Encrypted</a>
+								<a href="about">Confidentiality
+
+</a>
+								<a href="about">User Privacy
+
+ </a>
 								<a href="/" data-bs-toggle="modal" data-bs-target="#modal-wallet">Connect wallet</a>
 							</div>
 						</div>
 
 						<div class="col-6">
 							<div class="footer__nav">
-								<a href="staking/">Staking</a>
-								<a href="about/">Benefits</a>
-								<a href="about/">Features</a>
-								<a href="leaderboard/">Leaderboard</a>
+								<a href="about">Protection from Intermediaries
+
+</a>
+								<a href="about">Benefits</a>
+								<a href="about">Features</a>
+								<a href="about">Leaderboard</a>
 							</div>
 						</div>
 					</div>
@@ -120,10 +360,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2 order-2 order-md-4 order-lg-3 order-xl-4">
 					<h6 class="footer__title">Support</h6>
 					<div class="footer__nav">
-						<a href="faq/">Help center</a>
-						<a href="contacts/">Ask a question</a>
-						<a href="privacy/">Privacy policy</a>
-						<a href="privacy/">Terms & conditions</a>
+						<a href="faq">Help center</a>
+						<a href="contact">Ask a question</a>
+						<a href="privacy">Privacy policy</a>
+						<a href="privacy">Terms & conditions</a>
 					</div>
 				</div>
 			</div>
@@ -147,10 +387,10 @@
 							<a href="/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48h0a1.56,1.56,0,1,1,0-3.12,1.57,1.57,0,1,1,0,3.12ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z"/></svg></a>
 						</div>
 
-						<small class="footer__copyright">© ANPA, 2023—2024. Created by <a href="/" target="_blank">NETSMG</a>.</small>
+						<small class="footer__copyright">© WEBUInet, 2023—2024. Created by <a href="/" target="_blank">NETSMG</a>.</small>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<!-- end footer -->
+	
