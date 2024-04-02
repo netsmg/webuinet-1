@@ -95,7 +95,7 @@
             <li><a href="explore">Explore</a></li>
 									<li><a href="profile">Profile</a></li>
 									<li><a href="blogs">Blog</a></li>
-									<li><a href="add">Add new game</a></li>
+									<li><a href="about">About us</a></li>
           </ul>
           <!-- end navigation -->
 
