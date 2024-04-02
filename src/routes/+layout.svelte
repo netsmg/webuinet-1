@@ -1,48 +1,49 @@
 <script>
   import { onMount } from 'svelte';
-  import {onAuthStateChanged, signOut} from 'firebase/auth'
-  import toast, { Toaster } from 'svelte-french-toast';
+  import { onAuthStateChanged, signOut } from 'firebase/auth';
+  import toast from 'svelte-french-toast';
   import { fauth } from "../firebase";
-  
-  import {userStore} from "../stores/userStore"
-  
+  import { userStore } from "../stores/userStore";
+
   let headerBtn, headerNav, header, myModalEl;
+  let me;
 
   onMount(() => {
-document.title = "WEBUInet | Home";
-   const  saveSettings =() => {
+    document.title = "WEBUInet | Home";
+
+    const saveSettings = () => {
       return new Promise((resolve, reject) => {
-        let x = setInterval(()=>{
-          if($userStore.loggedIn===true){
-          resolve();
-          clearInterval(x);
-        }else if($userStore.loggedIn===false){
-          reject();
-          clearInterval(x);
-        }
-        }, 100)
+        let x = setInterval(() => {
+          if (userStore.loggedIn === true) {
+            resolve();
+            clearInterval(x);
+          } else if (userStore.loggedIn === false) {
+            reject();
+            clearInterval(x);
+          }
+        }, 100);
       });
-    }
+    };
+
     toast.promise(
-        saveSettings(),
-        {
-          loading: 'Checking...',
-          success: 'Signed In!',
-          error: 'You are not signed In!',
-        },
+      saveSettings(),
+      {
+        loading: 'Checking...',
+        success: 'Signed In!',
+        error: 'You are not signed In!',
+      }
     );
-    onAuthStateChanged(fauth, async(user) => {
-        if(user) {
-            userStore.set({...user, loggedIn: true});
-            me = user;
-        } else{
-           me = false
-            console.log('User Not Logged In!');
-            userStore.set({loggedIn: false});
-        }
-       });
-  
-  });
+
+    onAuthStateChanged(fauth, async (user) => {
+      if (user) {
+        userStore.set({...user, loggedIn: true});
+        me = user;
+      } else {
+        me = false;
+        console.log('User Not Logged In!');
+        userStore.set({loggedIn: false});
+      }
+    });
 
     headerBtn = document.querySelector('.header__btn');
     headerNav = document.querySelector('.header__nav');
@@ -89,7 +90,6 @@ document.title = "WEBUInet | Home";
     }
   }
 </script>
-
 <svelte:head>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/blueimp-gallery.min.css">
