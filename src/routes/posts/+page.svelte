@@ -111,7 +111,7 @@ img {
 {#each posts as post (post.id)}
 <div class="tweet-wrap">
   <div class="tweet-header">
-    <img src="{post.uimg}">
+    <img src="{post.uimg}" class="avator">
     <div class="tweet-header-info">
       {post.name} <span>@{post.handle}</span><span>. {post.time}
 </span>
