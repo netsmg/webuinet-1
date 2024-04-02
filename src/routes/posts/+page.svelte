@@ -106,7 +106,7 @@ img {
 </style>
 </svelte:head>
 
-<div>
+<div class="section ">
 
 {#each posts as post (post.id)}
 <div class="tweet-wrap">
