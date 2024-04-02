@@ -73,9 +73,7 @@
   font-family: 'Roboto', sans-serif;
 
 }
-img {
-  max-width:100%;
-}
+
 .avator {
   border-radius:100px;
   width:48px;
