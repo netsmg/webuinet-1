@@ -1,5 +1,5 @@
 <script>
-  import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+  import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
   import {goto} from '$app/navigation';
   import { app } from '../../firebase';
   
@@ -37,6 +37,9 @@ async function register() {
         // User is registered
         const user = userCredential.user;
         console.log('Registered user:', user);
+
+// Send email verification
+    await sendEmailVerification(auth.currentUser);
         goto('/login');
     } catch (error) {
         errorMessage = error.message;
