@@ -11,7 +11,7 @@
   async function addQuizData() {
     try {
       // Add question 1
-      await addDoc(collection(db, "quiz"), {
+      await addDoc(collection(db, "mquiz"), {
         id: "question_1",
         text: "What does CSS stand for?",
         options: [
