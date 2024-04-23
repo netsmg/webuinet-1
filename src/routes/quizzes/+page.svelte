@@ -8,7 +8,7 @@
 
   onMount(async () => {
     const db = getFirestore(app);
-    const querySnapshot = await getDocs(collection(db, 'quiz'));
+    const querySnapshot = await getDocs(collection(db, 'mquiz'));
     questions = querySnapshot.docs.map(doc => doc.data());
   });
 </script>
