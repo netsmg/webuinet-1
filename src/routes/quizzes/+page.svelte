@@ -1,22 +1,14 @@
-  <!-- App.svelte -->
-<script>
-  import { onMount } from 'svelte';
-  import { collection, getFirestore, getDocs } from 'firebase/firestore'; // Changed 'onSnapshot' to 'getDocs'
-  import { app } from '../../firebase';
-  let questions = [];
-
-  onMount(async () => {
+  <script>
     const db = getFirestore(app);
-    const querySnapshot = await getDocs(collection(db, 'quiz')); // Changed 'onSnapshot' to 'getDocs' and added 'collection(db, 'quiz')'
-    questions = querySnapshot.docs.map(doc => doc.data());
-  });
+    const querySnapshot = await getDocs(collection(db, 'quiz')); 
+    const questions = querySnapshot.docs.map(doc => doc.data());
 </script>
 
 <section class="section-1" id="section-1">
   <main>
       <div class="text-container">
           <h3>Pure CSS Quiz</h3>
-          {#if questions.length > 0}
+          {#if questions && questions.length > 0}
             {#each questions as question, index}
               <p>QUESTION {index + 1} OF {questions.length}</p>
               <p>{question.text}</p>
@@ -33,11 +25,10 @@
           {:else}
             <p>Loading...</p>
           {/if}
-          <button on:click={() => window.location.href='#section-2'}>Next</button>
+          <button on:click={() => window.location.href='#section-2'} id="btn">Next</button>
       </div>
   </main>
 </section>
-                  
 <style>
 html {
     box-sizing: border-box;
