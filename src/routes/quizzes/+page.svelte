@@ -1,13 +1,14 @@
   <!-- App.svelte -->
 <script>
   import { onMount } from 'svelte';
-  import { collection, getFirestore, getDocs } from 'firebase/firestore'; // Changed 'onSnapshot' to 'getDocs'
+  import { collection, getFirestore, getDocs } from 'firebase/firestore';
   import { app } from '../../firebase';
-  let questions = [];
+
+  let questions = []; // Initialize the questions array
 
   onMount(async () => {
     const db = getFirestore(app);
-    const querySnapshot = await getDocs(collection(db, 'quiz')); // Changed 'onSnapshot' to 'getDocs' and added 'collection(db, 'quiz')'
+    const querySnapshot = await getDocs(collection(db, 'quiz'));
     questions = querySnapshot.docs.map(doc => doc.data());
   });
 </script>
