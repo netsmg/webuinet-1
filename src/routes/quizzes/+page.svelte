@@ -30,10 +30,7 @@
                     </label>
                   {/each}
               </div>
-            {/each}
-          {:else}
-            <p>Loading...</p>
-          {/if}
+            
           <button on:click={() => window.location.href='#section-2'}>Next</button>
       </div>
   </main>
