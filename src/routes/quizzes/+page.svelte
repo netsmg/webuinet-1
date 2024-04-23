@@ -12,13 +12,13 @@
     questions = querySnapshot.docs.map(doc => doc.data());
   });
 </script>
-
+{#if questions.length > 0}
+            {#each questions as question, index}
 <section class="section-1" id="section-1">
   <main>
       <div class="text-container">
           <h3>Pure CSS Quiz</h3>
-          {#if questions.length > 0}
-            {#each questions as question, index}
+          
               <p>QUESTION {index + 1} OF {questions.length}</p>
               <p>{question.text}</p>
               <div class="quiz-options">
@@ -38,6 +38,11 @@
       </div>
   </main>
 </section>
+{/each}
+          {:else}
+            <p>Loading...</p>
+          {/if}
+
                   
 <style>
 html {
