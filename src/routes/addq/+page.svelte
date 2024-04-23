@@ -1,4 +1,4 @@
-<!-- AddQuestionsForm.svelte -->
+class="form__input AddQuestionsForm.svelte -->
 <script>
   import { onMount } from 'svelte';
   import { collection, getFirestore, onSnapshot } from 'firebase/firestore';
@@ -28,7 +28,8 @@ const db = getFirestore(app);
     }
   }
 </script>
-
+<div class="section section--content">
+		<div class="section__content">
 <h2>Add Quiz Questions</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
@@ -38,15 +39,17 @@ const db = getFirestore(app);
     <input type="text" bind:value={question.text} class="form__input" required>
     </div>
     {#each question.options as option, j (option.id)}
-      <div>
+      <div class="form__select">
         <label>Option {option.alphabet}:</label>
-        <input type="text" bind:value={option.label} required>
+        <input type="text" bind:value={option.label} class="form__input" required >
       </div>
     {/each}
-    <button type="button" on:click={() => addQuestion()}>Add Option</button>
+    <button class="form__btn form__btn--small" type="button" on:click={() => addQuestion()}>Add Option</button>
     {#if i === formData.questions.length - 1}
       <button type="button" on:click={() => formData.questions.splice(i, 1)}>Remove Question</button>
     {/if}
   {/each}
   <button type="submit" class="form__btn form__btn--small">Submit Questions</button>
 </form>
+</div>
+</div>
