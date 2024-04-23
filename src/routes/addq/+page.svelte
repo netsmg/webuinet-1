@@ -1,4 +1,4 @@
-class="form__input AddQuestionsForm.svelte -->
+
 <script>
   import { onMount } from 'svelte';
   import { collection, getFirestore, onSnapshot } from 'firebase/firestore';
