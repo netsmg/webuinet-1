@@ -1,7 +1,7 @@
   <script>
-import { collection, getFirestore, getDocs } from 'firebase/firestore';
-import { app } from '../../firebase';
-  const db = getFirestore(app);
+  import { collection, getFirestore, getDocs } from 'firebase/firestore';
+  import { app } from '../../firebase';
+  
     const db = getFirestore(app);
     const querySnapshot = await getDocs(collection(db, 'quiz')); 
     const questions = querySnapshot.docs.map(doc => doc.data());
