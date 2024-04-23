@@ -1,17 +1,18 @@
 <!-- AddQuizData.svelte -->
 <script>
+  // Import necessary functions from firebase/firestore
   import { onMount } from 'svelte';
-  import { collection, getFirestore, onSnapshot } from 'firebase/firestore';
-  import { app } from '../../firebase';
-  
-  
-const db = getFirestore(app);
+  import { collection, addDoc, getFirestore } from 'firebase/firestore';
+  import { app } from '../../firebase'; // Assuming you have a firebase.js file
+
+  const db = getFirestore(app); // Initialize Firestore with your Firebase app
 
   // Function to add quiz data to Firestore
   async function addQuizData() {
     try {
       // Add question 1
-      await db.collection("quiz").doc("question_1").set({
+      await addDoc(collection(db, "quiz"), {
+        id: "question_1",
         text: "What does CSS stand for?",
         options: [
           { id: "option_a", alphabet: "A", label: "Cascading Style Sheets", icon: "https://res.cloudinary.com/dvhndpbun/image/upload/v1588518387/jdsjkefkefkefefexco.svg" },
@@ -21,7 +22,8 @@ const db = getFirestore(app);
       });
 
       // Add question 2
-      await db.collection("quiz").doc("question_2").set({
+      await addDoc(collection(db, "quiz"), {
+        id: "question_2",
         text: "What is HTML used for?",
         options: [
           { id: "option_a", alphabet: "A", label: "Hypertext Markup Language" },
@@ -30,13 +32,13 @@ const db = getFirestore(app);
         ]
       });
 
-      console.log("Quiz data added successfully!");
+      alert("Quiz data added successfully!");
     } catch (error) {
       console.error("Error adding quiz data: ", error);
     }
   }
 
   onMount(() => {
-    addQuizData();
+    addQuizData(); // Call the function when the component mounts
   });
 </script>
