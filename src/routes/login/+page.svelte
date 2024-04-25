@@ -151,7 +151,7 @@
 				</div>
 
 				<div class="form__group form__group--checkbox">
-					<input id="remember"  name="remember" type="checkbox" required>
+					<input id="remember"  name="remember" type="checkbox">
 					<label for="remember">Remember Me</label>
 				</div>
 				
