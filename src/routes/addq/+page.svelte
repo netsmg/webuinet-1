@@ -3,7 +3,7 @@
 <script>
   import { writable } from 'svelte/store';
   import { getFirestore, collection, addDoc } from 'firebase/firestore';
-  import { app } from '../firebase'; // Assuming you have your Firebase configuration in firebase.js
+  import { app } from '../../firebase'; // Assuming you have your Firebase configuration in firebase.js
 
   let title = '';
   let level = '';
