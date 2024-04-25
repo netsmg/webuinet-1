@@ -44,7 +44,7 @@
   <input class="form__input" type="text" id="answer" bind:value={answer}>
   <input type="checkbox" bind:checked={isTrueAnswer}>
   <label for="isTrueAnswer">Is True Answer</label>
-  <button class="class="form__btn form__btn--small" type="submit" on:click={addAnswer}>Add Answer</button>
+  <button class="form__btn form__btn--small" type="submit" on:click={addAnswer}>Add Answer</button>
 
   <ul>
     {#each $answers as { answer, trueAnswer }, index}
