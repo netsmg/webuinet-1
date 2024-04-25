@@ -1,7 +1,28 @@
 <!-- DownloadButton.svelte -->
 <script>
+  import { onMount } from 'svelte/internal';
   import { saveAs } from 'file-saver';
 
+  import { getAuth } from 'firebase/auth';
+  import { app } from '../../firebase';
+  import { goto } from '$app/navigation';
+
+  const auth = getAuth(app);
+  let user;
+
+  onMount(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      user = currentUser;
+      if (!user) {
+        goto('/login');
+      }
+    });
+
+    return unsubscribe;
+  });
+
+  
+  
   const downloadFile = () => {
     // Replace 'url_to_your_file' with the actual URL of the file you want to download
     const fileUrl = 'https://webuinet.vercel.app/logo.svg';
