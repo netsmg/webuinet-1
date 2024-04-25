@@ -1,87 +1,59 @@
+<!-- CreateQuiz.svelte -->
+
 <script>
-  import { onMount } from 'svelte';
-  import { collection, addDoc, getFirestore } from 'firebase/firestore';
-  import { app } from '../../firebase'; // Assuming you have a firebase.js file
-  
-  const db = getFirestore(app);
+  import { writable } from 'svelte/store';
+  import { getFirestore, collection, addDoc } from 'firebase/firestore';
+  import { app } from '../firebase'; // Assuming you have your Firebase configuration in firebase.js
 
-  let question1 = '';
-  let question2 = '';
-  let option1a = '';
-  let option1b = '';
-  let option1c = '';
-  let option2a = '';
-  let option2b = '';
-  let option2c = '';
+  let title = '';
+  let level = '';
+  let question = '';
+  let answer = '';
+  let isTrueAnswer = false;
+  let answers = writable([]);
 
-  async function addQuizData() {
-    try {
-      await addDoc(collection(db, "mquiz"), {
-        id: "question_1",
-        text: question1,
-        options: [
-          { id: "option_a", alphabet: "A", label: option1a },
-          { id: "option_b", alphabet: "B", label: option1b },
-          { id: "option_c", alphabet: "C", label: option1c }
-        ]
-      });
+  const addAnswer = () => {
+    answers.update(arr => [...arr, { answer, trueAnswer: isTrueAnswer }]);
+    answer = '';
+    isTrueAnswer = false;
+  };
 
-      await addDoc(collection(db, "mquiz"), {
-        id: "question_2",
-        text: question2,
-        options: [
-          { id: "option_a", alphabet: "A", label: option2a },
-          { id: "option_b", alphabet: "B", label: option2b },
-          { id: "option_c", alphabet: "C", label: option2c }
-        ]
-      });
-
-      alert("Quiz data added successfully!");
-    } catch (error) {
-      console.error("Error adding quiz data: ", error);
-    }
-  }
-
-  onMount(() => {
-    addQuizData();
-  });
+  const submitQuiz = async () => {
+    const db = getFirestore(app);
+    const quizRef = collection(db, 'quizzes');
+    const newQuiz = await addDoc(quizRef, { title, level, questions: answers });
+    console.log('New quiz added with ID: ', newQuiz.id);
+  };
 </script>
 <div class="section section--content">
 		<div class="section__content">
-<form on:submit|preventDefault="{addQuizData}">
-  <label>
-    Question 1:
-    <input bind:value="{question1}"  class="form__input" type="text">
-  </label>
-  <label>
-    Option 1A:
-    <input bind:value="{option1a}" class="form__input" type="text">
-  </label>
-  <label>
-    Option 1B:
-    <input bind:value="{option1b}" class="form__input" type="text">
-  </label>
-  <label>
-    Option 1C:
-    <input bind:value="{option1c}" class="form__input"  type="text">
-  </label>
-  <label>
-    Question 2:
-    <input bind:value="{question2}" class="form__input" type="text">
-  </label>
-  <label>
-    Option 2A:
-    <input bind:value="{option2a}" class="form__input" type="text">
-  </label>
-  <label>
-    Option 2B:
-    <input bind:value="{option2b}" class="form__input" type="text">
-  </label>
-  <label>
-    Option 2C:
-    <input bind:value="{option2c}" class="form__input" type="text">
-  </label>
-  <button class="form__btn form__btn--small" type="submit">Add Quiz Data</button>
-</form>
+<div>
+  <h1>Create a New Quiz</h1>
+  <label for="title">Title:</label>
+   <input type="text" class="form__input" id="title" bind:value={title}>
+
+  <label for="level">Level:</label>
+  <input type="text" class="form__input" id="level" bind:value={level}>
+
+  <h2>Questions</h2>
+  <label for="question">Question:</label>
+  <input type="text" class="form__input" id="question" bind:value={question}>
+
+  <h3>Answers</h3>
+  <label for="answer">Answer:</label>
+  <input class="form__input" type="text" id="answer" bind:value={answer}>
+  <input type="checkbox" bind:checked={isTrueAnswer}>
+  <label for="isTrueAnswer">Is True Answer</label>
+  <button class="class="form__btn form__btn--small" type="submit" on:click={addAnswer}>Add Answer</button>
+
+  <ul>
+    {#each $answers as { answer, trueAnswer }, index}
+      <li>{index + 1}. {answer} {#if trueAnswer}(Correct answer){/if}</li>
+    {/each}
+  </ul>
+
+  <button class="form__btn form__btn--small" type="submit" on:click={submitQuiz}>Submit Quiz</button>
+</div>
+
 </div>
 </div>
