@@ -1,40 +1,11 @@
+
 <script>
   import { onMount } from "svelte";
-import toast from 'svelte-french-toast';
+  import toast from 'svelte-french-toast';
   import { getDatabase, ref, push } from "firebase/database";
-   import { app } from '../../firebase';
-  
-  
+  import { app } from '../../firebase';
+
   let formData = {
-    name: "",
-    email: "",
-    phone: "",
-    subject:"",
-    message: "",
-  };
-
-  const handleSubmit = async () => {
-  // Check if any field is empty
-  if (
-    !formData.name ||
-    !formData.email ||
-    !formData.phone ||
-    !formData.subject ||
-    !formData.message
-  ) {
-    // Show error alert if any field is empty
-    toast.error('Please fill in all fields..');
-    return;
-  }
-
-  const db = getDatabase(app);
-  const contactsRef = ref(db, "contacts");
-
-  // Push the form data to the "contacts" collection
-  await push(contactsRef, formData);
-
-  // Clear the form after submission
-  formData = {
     name: "",
     email: "",
     phone: "",
@@ -42,16 +13,45 @@ import toast from 'svelte-french-toast';
     message: "",
   };
 
-  // Alert after submission
-  toast.success('Thank you for your submission.');
+  const handleSubmit = async () => {
+    // Check if any field is empty
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      // Show error alert if any field is empty
+      toast.error('Please fill in all fields.');
+      return;
+    }
 
-  console.log("Form submitted to Firebase Realtime Database!");
-};
-onMount(()=>{
-        document.title = "Contact | Webuinet";
-    })
+    const db = getDatabase(app);
+    const contactsRef = ref(db, "contacts");
+
+    // Push the form data to the "contacts" collection
+    await push(contactsRef, formData);
+
+    // Clear the form after submission
+    formData = {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    };
+
+    // Alert after submission
+    toast.success('Thank you for your submission.');
+
+    console.log("Form submitted to Firebase Realtime Database!");
+  };
+
+  onMount(() => {
+    document.title = "Contact | Webuinet";
+  });
 </script>
-
 
 <Toaster/>
 
