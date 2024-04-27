@@ -7,8 +7,7 @@
   let email = '';
   let password = '';
   let errorMessage = '';
-
-  async function login() {
+async function login() {
     // Clear previous error message
     errorMessage = '';
 
@@ -29,6 +28,12 @@
     // If there are validation errors, display error message and return
     if (errorMessage) {
         console.error('Login error:', errorMessage);
+        // Use SweetAlert to show error message
+        await Swal.fire({
+            icon: 'error',
+            title: 'Login Error',
+            text: errorMessage
+        });
         return;
     }
 
@@ -41,8 +46,16 @@
     } catch (error) {
         errorMessage = error.message;
         console.error('Login error:', errorMessage);
+        // Use SweetAlert to show error message
+        await Swal.fire({
+            icon: 'error',
+            title: 'Login Error',
+            text: errorMessage
+        });
     }
-  }
+}
+
+
 
   async function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -54,7 +67,13 @@
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-        console.error('Login with Google error:', errorMessage);
+await Swal.fire({
+            icon: 'error',
+            title: 'Login Error',
+            text: errorMessage
+        });
+        return;
+         
     }
   }
 
@@ -68,7 +87,12 @@
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-        console.error('Login with Facebook error:', errorMessage);
+        await Swal.fire({
+            icon: 'error',
+            title: 'Login Error',
+            text: errorMessage
+        });
+        return;
     }
   }
 
@@ -82,7 +106,12 @@
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-        console.error('Login with Twitter error:', errorMessage);
+        await Swal.fire({
+            icon: 'error',
+            title: 'Login Error',
+            text: errorMessage
+        });
+        return;
     }
   }
 </script>
