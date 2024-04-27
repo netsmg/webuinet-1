@@ -16,9 +16,9 @@ import toast, { Toaster } from 'svelte-french-toast';
 toast.error('Please log in to access this page.');
       }
     });
-if (user) {
-        toast.success('Please log in to access this page.');
-      }
+else {
+            toast.success('You are logged in.');
+        }
     });
 
     return unsubscribe;
