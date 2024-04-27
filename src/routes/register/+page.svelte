@@ -1,15 +1,15 @@
-<script>
+
+    <script>
   import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
-import toast, { Toaster } from 'svelte-french-toast';
-  import {goto} from '$app/navigation';
+  import { goto } from '$app/navigation';
   import { app } from '../../firebase';
-  
+  import toast, { Toaster } from 'svelte-french-toast';
   const auth = getAuth(app);
   let email = '';
   let password = '';
   let errorMessage = '';
 
-async function register() {
+  async function register() {
     // Clear previous error message
     errorMessage = '';
 
@@ -33,37 +33,37 @@ async function register() {
         toast.error(errorMessage);
         return;
     }
-    try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    // User is registered
-    const user = userCredential.user;
-    console.log('Registered user:', user);
-
-    // Send email verification
-    await sendEmailVerification(auth.currentUser);
-    goto('/login');
-} catch (error) {
-    let errorMessage = '';
-    switch (error.code) {
-        case 'auth/email-already-in-use':
-            errorMessage = 'This email is already in use. Please use a different email.';
-            break;
-        case 'auth/invalid-email':
-            errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
-            break;
-        case 'auth/weak-password':
-            errorMessage = 'The password you entered is too weak. Please use a stronger password.';
-            break;
-        default:
-            errorMessage = 'An error occurred during registration. Please try again later.';
-            break;
-    }
-
-    console.error('Registration error:', errorMessage);
-    toast.error(errorMessage);
-}
-</script>
     
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        // User is registered
+        const user = userCredential.user;
+        console.log('Registered user:', user);
+
+        // Send email verification
+        await sendEmailVerification(auth.currentUser);
+        goto('/login');
+    } catch (error) {
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please use a different email.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+                break;
+            default:
+                errorMessage = 'An error occurred during registration. Please try again later.';
+                break;
+        }
+
+        console.error('Registration error:', errorMessage);
+        toast.error(errorMessage);
+    }
+  }
+</script>
 
 <svelte:head>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
