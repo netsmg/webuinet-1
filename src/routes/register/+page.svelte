@@ -1,5 +1,6 @@
 <script>
   import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import toast, { Toaster } from 'svelte-french-toast';
   import {goto} from '$app/navigation';
   import { app } from '../../firebase';
   
@@ -29,6 +30,7 @@ async function register() {
     // If there are validation errors, display error message and return
     if (errorMessage) {
         console.error('Registration error:', errorMessage);
+        toast.error(errorMessage);
         return;
     }
 
@@ -44,6 +46,7 @@ async function register() {
     } catch (error) {
         errorMessage = error.message;
         console.error('Registration error:', errorMessage);
+        toast.error(errorMessage);
     }
 }
   
@@ -58,7 +61,7 @@ async function register() {
 	<link rel="stylesheet" href="/css/slimselect.css">
 	<link rel="stylesheet" href="/css/main.css">
 </svelte:head>
-
+<Toaster/>
 <!-- page wrap -->
 	<div class="section section--content">
 		<div class="section__content">
