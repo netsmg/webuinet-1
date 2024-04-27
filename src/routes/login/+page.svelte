@@ -1,36 +1,33 @@
-<script>
-import { onMount } from 'svelte/internal';
-   import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from 'firebase/auth';
-import toast, { Toaster } from 'svelte-french-toast';
-import { goto } from '$app/navigation';
+
+
+        <script>
+  import { onMount } from 'svelte';
+  import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from 'firebase/auth';
+  import toast, { Toaster } from 'svelte-french-toast';
+  import { goto } from '$app/navigation';
   import { app } from '../../firebase';
-  
+
   const auth = getAuth(app);
   let user;
   let email = '';
   let password = '';
   let errorMessage = '';
 
-onMount(() => {
-document.title ="WEBUInet | Login";
+  onMount(() => {
+    document.title ="WEBUInet | Login";
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       user = currentUser;
       if (!user) {
-        
-toast.error('You are not logged in.');
+        toast.error('You are not logged in.');
+      } else {
+        toast.success('You are logged in.');
+        goto('/profile');
       }
-    
-else {
-            toast.success('You are logged in.');
-            goto('/profile');
-        }
     });
-
     return unsubscribe;
   });
-}
 
-async function login() {
+  async function login() {
     // Clear previous error message
     errorMessage = '';
 
@@ -68,9 +65,7 @@ async function login() {
         // Use toast to show error message
         toast.error(errorMessage);
     }
-}
-
-
+  }
 
   async function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -79,11 +74,10 @@ async function login() {
         // User is signed in
         const user = userCredential.user;
         console.log('Logged in user:', user);
-        goto('/');
+        goto('/profile');
     } catch (error) {
         errorMessage = error.message;
-toast.error(errorMessage);
-         
+        toast.error(errorMessage);
     }
   }
 
@@ -94,7 +88,7 @@ toast.error(errorMessage);
         // User is signed in
         const user = userCredential.user;
         console.log('Logged in user:', user);
-        goto('/');
+        goto('/profile');
     } catch (error) {
         errorMessage = error.message;
         toast.error(errorMessage);
@@ -108,7 +102,7 @@ toast.error(errorMessage);
         // User is signed in
         const user = userCredential.user;
         console.log('Logged in user:', user);
-        goto('/');
+        goto('/profile');
     } catch (error) {
         errorMessage = error.message;
         toast.error(errorMessage);
