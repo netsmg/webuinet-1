@@ -1,3 +1,29 @@
+<script>
+  import { onMount } from 'svelte/internal';
+import toast, { Toaster } from 'svelte-french-toast';
+  import { getAuth } from 'firebase/auth';
+  import { app } from '../firebase';
+  import { goto } from '$app/navigation';
+
+  const auth = getAuth(app);
+  let user;
+
+  onMount(() => {
+   document.title = "WEBUInet";
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      user = currentUser;
+      if (!user) {
+        toast.error('You are not logged in.');
+      }
+    
+else {
+            toast.success('You are logged in.');
+        }
+    });
+
+    return unsubscribe;
+  });
+</script>
 
 
 <!-- hero -->
