@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte/internal';
+import toast, { Toaster } from 'svelte-french-toast';
   import { getAuth } from 'firebase/auth';
   import { app } from '../../firebase';
   import { goto } from '$app/navigation';
@@ -12,6 +13,7 @@
       user = currentUser;
       if (!user) {
         goto('/login');
+toast.error('Please log in to access this page.');
       }
     });
 
@@ -24,6 +26,7 @@
 </script>
 
 	<!-- page wrap -->
+<Toaster/>
 	{#if user}
 	<div class="section section--content">
 		<div class="section__content">
