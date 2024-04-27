@@ -63,12 +63,7 @@ async function login() {
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-await Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: errorMessage
-        });
-        return;
+toast.error(errorMessage);
          
     }
   }
@@ -83,12 +78,7 @@ await Swal.fire({
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-        await Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: errorMessage
-        });
-        return;
+        toast.error(errorMessage);
     }
   }
 
@@ -102,12 +92,7 @@ await Swal.fire({
         goto('/');
     } catch (error) {
         errorMessage = error.message;
-        await Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: errorMessage
-        });
-        return;
+        toast.error(errorMessage);
     }
   }
 </script>
@@ -130,11 +115,7 @@ await Swal.fire({
 	<span class="form__tagline">Welcome to WEBUInet</span>
 					
 				</div>
-<div>
-    {#if errorMessage}
-  <p style="color: red;">{errorMessage}</p>
-{/if}
-</div>
+
 
 				<div class="form__group">
 					<input type="email" id="email" bind:value={email} class="form__input" placeholder="Email">
