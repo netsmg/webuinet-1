@@ -65,11 +65,14 @@
             case 'auth/invalid-email':
                 errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
                 break;
+    case 'auth/wrong-password':
+                errorMessage = 'The password you entered is incorrect. Please try again.';
+          break;
             case 'auth/weak-password':
                 errorMessage = 'The password you entered is too weak. Please use a stronger password.';
                 break;
             default:
-                errorMessage = 'An error occurred during registration. Please try again later.';
+                errorMessage = 'An error occurred during login. Please try again later.';
                 break;
         }
         console.error('Login error:', errorMessage);
