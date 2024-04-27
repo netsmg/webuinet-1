@@ -1,12 +1,16 @@
 <script>
    import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from 'firebase/auth';
-  import { goto } from '$app/navigation';
+import toast, { Toaster } from 'svelte-french-toast';
+import { goto } from '$app/navigation';
   import { app } from '../../firebase';
   
   const auth = getAuth(app);
   let email = '';
   let password = '';
   let errorMessage = '';
+
+
+
 async function login() {
     // Clear previous error message
     errorMessage = '';
@@ -28,12 +32,8 @@ async function login() {
     // If there are validation errors, display error message and return
     if (errorMessage) {
         console.error('Login error:', errorMessage);
-        // Use SweetAlert to show error message
-        await Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: errorMessage
-        });
+        // Use toast to show error message
+        toast.error(errorMessage);
         return;
     }
 
@@ -46,12 +46,8 @@ async function login() {
     } catch (error) {
         errorMessage = error.message;
         console.error('Login error:', errorMessage);
-        // Use SweetAlert to show error message
-        await Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: errorMessage
-        });
+        // Use toast to show error message
+        toast.error(errorMessage);
     }
 }
 
@@ -123,6 +119,8 @@ await Swal.fire({
 	<link rel="stylesheet" href="css/main.css">
 
 <!-- page wrap -->
+
+<Toaster/>
 	<div class="section section--content">
 		<div class="section__content">
 			<!-- form -->
