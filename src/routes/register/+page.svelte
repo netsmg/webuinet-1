@@ -33,26 +33,37 @@ async function register() {
         toast.error(errorMessage);
         return;
     }
-
     try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        // User is registered
-        const user = userCredential.user;
-        console.log('Registered user:', user);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    // User is registered
+    const user = userCredential.user;
+    console.log('Registered user:', user);
 
-// Send email verification
+    // Send email verification
     await sendEmailVerification(auth.currentUser);
-        goto('/login');
-    } catch (error) {
-        errorMessage = error.message;
-        console.error('Registration error:', errorMessage);
-        toast.error(errorMessage);
+    goto('/login');
+} catch (error) {
+    let errorMessage = '';
+    switch (error.code) {
+        case 'auth/email-already-in-use':
+            errorMessage = 'This email is already in use. Please use a different email.';
+            break;
+        case 'auth/invalid-email':
+            errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+            break;
+        case 'auth/weak-password':
+            errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+            break;
+        default:
+            errorMessage = 'An error occurred during registration. Please try again later.';
+            break;
     }
-}
-  
 
-  
+    console.error('Registration error:', errorMessage);
+    toast.error(errorMessage);
+}
 </script>
+    
 
 <svelte:head>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -76,11 +87,7 @@ async function register() {
 					<span class="form__tagline">Welcome to Webuinet</span>
 					
 				</div>
-<div>
-    {#if errorMessage}
-  <p style="color: red;">{errorMessage}</p>
-{/if}
-</div>
+
 
 				<div class="form__group">
 					<input type="email" id="email" bind:value={email} class="form__input" placeholder="Email">
