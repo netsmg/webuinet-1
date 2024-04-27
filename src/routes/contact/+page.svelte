@@ -1,7 +1,7 @@
 
 <script>
   import { onMount } from "svelte";
-  import toast from 'svelte-french-toast';
+  import toast, { Toaster } from 'svelte-french-toast';
   import { getDatabase, ref, push } from "firebase/database";
   import { app } from '../../firebase';
 
