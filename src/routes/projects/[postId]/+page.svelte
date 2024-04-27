@@ -68,11 +68,14 @@
                         </div>
                       </div>
                       
-                      
+                     <div class="content">
+{@html post.content}
+</div> 
                       
   {:else}
     <p>Loading...</p>
   {/if}
+
                     </div>
                   </div>
                 </div>
