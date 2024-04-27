@@ -1,6 +1,4 @@
-
-
-        <script>
+<script>
   import { onMount } from 'svelte';
   import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from 'firebase/auth';
   import toast, { Toaster } from 'svelte-french-toast';
@@ -58,9 +56,22 @@
         // User is signed in
         const user = userCredential.user;
         console.log('Logged in user:', user);
-        goto('/');
+        goto('/profile');
     } catch (error) {
-        errorMessage = error.message;
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please use a different email.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+                break;
+            default:
+                errorMessage = 'An error occurred during registration. Please try again later.';
+                break;
+        }
         console.error('Login error:', errorMessage);
         // Use toast to show error message
         toast.error(errorMessage);
@@ -76,7 +87,20 @@
         console.log('Logged in user:', user);
         goto('/profile');
     } catch (error) {
-        errorMessage = error.message;
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please use a different email.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+                break;
+            default:
+                errorMessage = 'An error occurred during registration. Please try again later.';
+                break;
+        }
         toast.error(errorMessage);
     }
   }
@@ -90,11 +114,23 @@
         console.log('Logged in user:', user);
         goto('/profile');
     } catch (error) {
-        errorMessage = error.message;
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please use a different email.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+                break;
+            default:
+                errorMessage = 'An error occurred during registration. Please try again later.';
+                break;
+        }
         toast.error(errorMessage);
     }
   }
-
   async function loginWithTwitter() {
     const provider = new TwitterAuthProvider();
     try {
@@ -104,18 +140,33 @@
         console.log('Logged in user:', user);
         goto('/profile');
     } catch (error) {
-        errorMessage = error.message;
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please use a different email.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email you entered is invalid. Please enter a valid email address.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'The password you entered is too weak. Please use a stronger password.';
+                break;
+            default:
+                errorMessage = 'An error occurred during registration. Please try again later.';
+                break;
+        }
         toast.error(errorMessage);
     }
   }
 </script>
 
+        
+    <svelte:head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/blueimp-gallery.min.css">
 	<link rel="stylesheet" href="css/splide.min.css">
 	<link rel="stylesheet" href="css/slimselect.css">
 	<link rel="stylesheet" href="css/main.css">
-
+</svelte:head>
 <!-- page wrap -->
 
 <Toaster/>
