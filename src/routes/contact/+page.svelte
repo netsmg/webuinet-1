@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+import toast from 'svelte-french-toast';
   import { getDatabase, ref, push } from "firebase/database";
    import { app } from '../../firebase';
   
@@ -22,7 +23,7 @@
     !formData.message
   ) {
     // Show error alert if any field is empty
-    alert("Please fill in all fields");
+    toast.error('Please fill in all fields..');
     return;
   }
 
@@ -42,7 +43,7 @@
   };
 
   // Alert after submission
-  alert("Form submit successful!");
+  toast.success('Thank you for your submission.');
 
   console.log("Form submitted to Firebase Realtime Database!");
 };
@@ -52,7 +53,7 @@ onMount(()=>{
 </script>
 
 
-
+<Toaster/>
 
 <!-- contact -->
 	<section class="section section--first">
