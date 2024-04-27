@@ -10,7 +10,7 @@
     document.title ="loading..";
     const postId = $page.params.postId;
     const db = getFirestore(app);
-    const postRef = doc(db, 'blogs', postId);
+    const postRef = doc(db, 'wprojects', postId);
     const postSnapshot = await getDoc(postRef);
     
     if (postSnapshot.exists()) {
